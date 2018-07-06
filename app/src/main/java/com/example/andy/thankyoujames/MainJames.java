@@ -10,7 +10,7 @@ public class MainJames extends AppCompatActivity {
 
     String warumgehstduned = "WTF";
 
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,11 @@ public class MainJames extends AppCompatActivity {
         helloWorld();
     }
 
-    //Hallo
+    //Hallo#
+
+    private void helloWorldNummerZwei(){
+        
+    }
 
     private void helloWorld(){
 
