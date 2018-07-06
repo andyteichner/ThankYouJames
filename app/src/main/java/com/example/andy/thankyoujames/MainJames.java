@@ -25,6 +25,10 @@ public class MainJames extends AppCompatActivity {
         
     }
 
+    private void helloWorldDieDritte(){
+        
+    }
+
     private void helloWorld(){
 
     }
