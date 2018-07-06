@@ -10,6 +10,8 @@ public class MainJames extends AppCompatActivity {
 
     String warumgehstduned = "WTF";
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
