@@ -5,6 +5,11 @@ import android.os.Bundle;
 
 public class MainJames extends AppCompatActivity {
 
+    String testString = "string";
+
+
+    String warumgehstduned = "WTF";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
