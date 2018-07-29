@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Thank you, James</string>
+
+    // Texte der MainJames Activity
+    <string name="main_header_text">James</string>
+    <string name="main_offer_text">Angebote der Woche</string>
 </resources>
