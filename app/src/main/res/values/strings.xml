@@ -4,4 +4,24 @@
     // Texte der MainJames Activity
     <string name="main_header_text">James</string>
     <string name="main_offer_text">Angebote der Woche</string>
+
+    //Fragement Texte
+    <string name="fragment_morning">Morgen</string>
+    <string name="fragment_noon">Mittag</string>
+    <string name="fragment_evening">Abend</string>
+
+    // Kategorien für die einzelen Tageszeiten
+    <string name="supermeal_morning_1">Kaffee</string>
+    <string name="supermeal_morning_2">Müsli</string>
+    <string name="supermeal_morning_3">Belegte Brote</string>
+
+    <string name="supermeal_noon_1">Suppe</string>
+    <string name="supermeal_noon_2">Pasta</string>
+    <string name="supermeal_noon_3">Sandwiches</string>
+
+    <string name="supermeal_evening_1">Pizza</string>
+    <string name="supermeal_evening_2">Fleischgerichte</string>
+    <string name="supermeal_evening_3">Fischgerichte</string>
+
+
 </resources>

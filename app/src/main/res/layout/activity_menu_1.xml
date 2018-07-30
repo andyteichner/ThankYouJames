@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Menu_1">
 
+    <ImageView
+        android:id="@+id/header_image_menu1"
+        android:src="@drawable/Nirvana"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></ImageView>
+
     <TextView
+        android:id="@+id/header_text_menu1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test"/>
+        android:layout_alignLeft="@+id/header_image_menu1"
+        android:layout_alignTop="@+id/header_image_menu1"
+        android:layout_alignRight="@+id/header_image_menu1"
+        android:layout_alignBottom="@+id/header_image_menu1"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:text="@string/main_header_text"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        ></TextView>
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/header_burger_button_menu1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/header_image_menu1"
+        android:text="B"
+        />
+
+    <Button
+        android:id="@+id/header_shopping_button_menu1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/header_image_menu1"
+        android:layout_alignRight="@+id/header_image_menu1"
+        android:text="WK"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/header_image_menu1">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/supermeal_no1"
+        android:layout_below="@id/header_image"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/supermeal_no2"
+        android:layout_below="@id/supermeal_no1"
+        />
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/supermeal_no3"
+        android:layout_below="@id/supermeal_no2"
+        />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
