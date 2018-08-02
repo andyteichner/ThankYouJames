@@ -13,7 +13,7 @@
     // Kategorien für die einzelen Tageszeiten
     <string name="supermeal_morning_1">Kaffee</string>
     <string name="supermeal_morning_2">Müsli</string>
-    <string name="supermeal_morning_3">Belegte Brote</string>
+    <string name="supermeal_morning_3">Beagles</string>
 
     <string name="supermeal_noon_1">Suppe</string>
     <string name="supermeal_noon_2">Pasta</string>
@@ -23,5 +23,43 @@
     <string name="supermeal_evening_2">Fleischgerichte</string>
     <string name="supermeal_evening_3">Fischgerichte</string>
 
+    //Gerichte wenn "morning" gewählt wird
+    <string name="coffee_1">Milchkaffee</string>
+    <string name="coffee_2">Cappuccino</string>
+    <string name="coffee_3">Espresso</string>
+    
+    <string name="muesli_1">Schokomuesli</string>
+    <string name="muesli_2">Fruchtmuesli</string>
+    <string name="muesli_3">Nussmuesli</string>
+    
+    <string name="beagle_1">Sweet Beagle</string>
+    <string name="beagle_2">Fresh Beagle</string>
+    <string name="beagle_3">Default Beagle</string>
+    
+    // Gerichte wenn "noon" ausgeählt wird
+    <string name="soup_1">Tomatensuppe</string>
+    <string name="soup_2">Spragelsuppe</string>
+    <string name="soup_3">Festtagssuppe</string>
+
+    <string name="pasta_1">Carbonara</string>
+    <string name="pasta_2">Napoli</string>
+    <string name="pasta_3">Tuna</string>
+
+    <string name="sandwich_1">Schinken und Käse</string>
+    <string name="sandwich_2">Salami und Mozarella</string>
+    <string name="sandwich_3">Huehnchen</string>
+
+    //Gerichte wenn "evening" gewählt wird
+    <string name="pizza_1">Hawaii</string>
+    <string name="pizza_2">Magarita</string>
+    <string name="pizza_3">Spezial</string>
+
+    <string name="meat_1">Burger</string>
+    <string name="meat_2">Steak</string>
+    <string name="meat_3">Schnitzel</string>
+
+    <string name="fish_1">Fish and Chips</string>
+    <string name="fish_2">Lachssteak</string>
+    <string name="fish_3">Kalamari</string>
 
 </resources>
