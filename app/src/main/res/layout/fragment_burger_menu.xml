@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BurgerMenu">
+
+
+    <TextView
+        android:id="@+id/fragment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="30dp"
+        />
+
+    <Button
+        android:id="@+id/morning_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_text"
+        android:text="@string/fragment_morning"/>
+
+    <Button
+        android:id="@+id/noon_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/morning_button"
+        android:text="@string/fragment_noon"/>
+
+    <Button
+        android:id="@+id/evening_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noon_button"
+        android:text="@string/fragment_evening"/>
+
+
+</RelativeLayout>

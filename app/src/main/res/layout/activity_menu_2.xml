@@ -34,7 +34,7 @@
         android:id="@+id/header_burger_button_menu2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/header_image_menu1"
+        android:layout_alignBottom="@+id/header_image_menu2"
         android:text="B"
         />
 
@@ -42,8 +42,8 @@
         android:id="@+id/header_shopping_button_menu2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/header_image_menu1"
-        android:layout_alignRight="@+id/header_image_menu1"
+        android:layout_alignBottom="@+id/header_image_menu2"
+        android:layout_alignRight="@+id/header_image_menu2"
         android:text="WK"
         />
 
@@ -56,7 +56,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/submeal_no1"
+            android:id="@+id/submeal_no1_menu2"
             android:layout_below="@id/header_image"
 
             />
@@ -64,15 +64,15 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/submeal_no2"
-            android:layout_below="@id/submeal_no1"
+            android:id="@+id/submeal_no2_menu2"
+            android:layout_below="@id/submeal_no1_menu2"
             />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/submeal_no3"
-            android:layout_below="@id/submeal_no2"
+            android:id="@+id/submeal_no3_menu2"
+            android:layout_below="@id/submeal_no2_menu2"
             />
 
 

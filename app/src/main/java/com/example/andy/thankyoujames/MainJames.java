@@ -1,6 +1,8 @@
 package com.example.andy.thankyoujames;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +12,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainJames extends Activity implements View.OnClickListener {
+public class MainJames extends FragmentActivity implements View.OnClickListener {
 
     private ImageView   headerImage;
     private TextView    headerText, offerText;
     private Button      headerBurger, headerShopping;
     private ImageButton offerOne, offerTwo;
+
+    private BurgerMenu  burgerMenu;
+    private boolean fragmentGetsShown = false;
 
 
     @Override
@@ -23,7 +28,20 @@ public class MainJames extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_james);
         initView();
+        initFragment();
 
+    }
+
+    private void initFragment(){
+
+        //BurgerMenu
+        burgerMenu = new BurgerMenu();
+
+        FragmentTransaction burgerTransaction = getSupportFragmentManager().beginTransaction();
+
+               burgerTransaction.add(R.id.fragment_mainJames, burgerMenu)
+                .commit();
+        fragmentGetsShown = !fragmentGetsShown;
     }
 
     private void initView(){
@@ -47,6 +65,7 @@ public class MainJames extends Activity implements View.OnClickListener {
         offerTwo.setOnClickListener(this);
 
 
+
     }
 
     @Override
@@ -54,6 +73,7 @@ public class MainJames extends Activity implements View.OnClickListener {
         // TODO: 29.07.2018  intents für die Angebote sowie das Fragment und den Warenkorb
         switch (view.getId()){
             case R.id.header_burger_button:
+                
                 break;
             case R.id.header_shopping_button:
                 break;

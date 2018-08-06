@@ -27,15 +27,15 @@
     <string name="coffee_1">Milchkaffee</string>
     <string name="coffee_2">Cappuccino</string>
     <string name="coffee_3">Espresso</string>
-    
+
     <string name="muesli_1">Schokomuesli</string>
     <string name="muesli_2">Fruchtmuesli</string>
     <string name="muesli_3">Nussmuesli</string>
-    
+
     <string name="beagle_1">Sweet Beagle</string>
     <string name="beagle_2">Fresh Beagle</string>
     <string name="beagle_3">Default Beagle</string>
-    
+
     // Gerichte wenn "noon" ausgeählt wird
     <string name="soup_1">Tomatensuppe</string>
     <string name="soup_2">Spragelsuppe</string>
@@ -46,7 +46,7 @@
     <string name="pasta_3">Tuna</string>
 
     <string name="sandwich_1">Schinken und Käse</string>
-    <string name="sandwich_2">Salami und Mozarella</string>
+    <string name="sandwich_2">Salami und Mozzarella</string>
     <string name="sandwich_3">Huehnchen</string>
 
     //Gerichte wenn "evening" gewählt wird
@@ -61,5 +61,8 @@
     <string name="fish_1">Fish and Chips</string>
     <string name="fish_2">Lachssteak</string>
     <string name="fish_3">Kalamari</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

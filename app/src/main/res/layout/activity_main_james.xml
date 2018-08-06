@@ -47,6 +47,8 @@
         android:text="WK"
         />
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,6 +75,16 @@
         android:layout_toRightOf="@id/main_james_offer_one"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"/>
+
+    <fragment
+        android:id="@+id/fragment_mainJames"
+        android:name="com.example.andy.thankyoujames.BurgerMenu"
+        android:layout_width="288dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="50dp" />
 
 
 </RelativeLayout>
