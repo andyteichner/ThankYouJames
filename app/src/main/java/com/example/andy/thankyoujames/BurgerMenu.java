@@ -56,20 +56,4 @@ public class BurgerMenu extends Fragment {
 
 
 
-
-    public void showHideFragment(final Fragment fragment){
-
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.setCustomAnimations(android.R.animator.fade_in,
-                android.R.animator.fade_out);
-
-        if (fragment.isHidden()) {
-            ft.show(fragment);
-        } else {
-            ft.hide(fragment);
-        }
-        ft.commit();
-    }
-
-
 }

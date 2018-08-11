@@ -3,7 +3,7 @@
 
     // Texte der MainJames Activity
     <string name="main_header_text">James</string>
-    <string name="main_offer_text">Angebote der Woche</string>
+    <string name="main_offer_text">Highlight der Woche</string>
 
     //Fragement Texte
     <string name="fragment_morning">Morgen</string>
@@ -32,9 +32,9 @@
     <string name="muesli_2">Fruchtmuesli</string>
     <string name="muesli_3">Nussmuesli</string>
 
-    <string name="beagle_1">Sweet Beagle</string>
-    <string name="beagle_2">Fresh Beagle</string>
-    <string name="beagle_3">Default Beagle</string>
+    <string name="bagel_1">Sweet Bagel</string>
+    <string name="bagel_2">Fresh Bagel</string>
+    <string name="bagel_3">Default Bagel</string>
 
     // Gerichte wenn "noon" ausgeählt wird
     <string name="soup_1">Tomatensuppe</string>
@@ -61,6 +61,85 @@
     <string name="fish_1">Fish and Chips</string>
     <string name="fish_2">Lachssteak</string>
     <string name="fish_3">Kalamari</string>
+
+    //Information für die einzelnen Gerichte
+    //Morgen
+    //Kaffee:
+    //Details Milchkaffee
+    <string name="milchkaffee_name">Milchkaffee</string>
+    <string name="milchkaffee_des">Kaffee, Milch </string>
+
+    //Details Cappuccino
+    <string name="cappu_name">Cappuccino</string>
+    <string name="cappu_des">Kaffee, Milch </string>
+
+    //Details Espresso
+    <string name="espresso_name">Espresso</string>
+    <string name="espresso_des">Kaffee</string>
+
+    //Muesli
+    //Details Schokomueslie
+    <string name="schokomu_name">Schokomuesli</string>
+    <string name="schokomu_des">Müsli mit Schokostückchen</string>
+
+    //Details Fruchtmueslie
+    <string name="fruchtmu_name">Fuechtemuesli</string>
+    <string name="fruchtmu_des">Müsli mit Fruchtstückchen</string>
+
+    //Details Nussmueslie
+    <string name="nussmu_name">Nussmuesli</string>
+    <string name="nussmu_des">Müsli mit Nuessen</string>
+
+    //Details Sweet Bagel
+    <string name="sweetbagel_name">Sweet Bagel</string>
+    <string name="sweetbagel_des">Bagel mit Schoko-Nuss-Creme</string>
+
+    //Details Fresh Bagel
+    <string name="freshbagel_name">Fresh Bagel</string>
+    <string name="freshbagel_des">Bagel mit Frischkäse und frischem Gemüse</string>
+
+    //Details Default Bagel
+    <string name="defaultbagel_name">Bagel</string>
+    <string name="defaultbagel_des">Bagel</string>
+
+    //Details TomatenSuppe
+    <string name="tomatensuppe_name">Toamtensuppe</string>
+    <string name="toamtensuppe_des">Suppe aus Tomaten</string>
+
+    //Details SpargelSuppe
+    <string name="spargelsuppe_name">Spargelsuppe</string>
+    <string name="spargelsuppe_des">Suppe aus Spargel</string>
+
+    //Details Festtagssuppe
+    <string name="festtagssuppe_name">Festtagssuppe</string>
+    <string name="festtagssuppe_des">Suppe aus Festtagen</string>
+
+    //Details Pasta Carbonara
+    <string name="pasta_carbonara_name">Pasta mit Carbonara</string>
+    <string name="pasta_carbonara_des">Pasta, Carbonara</string>
+
+    //Details Pasta Napoli
+    <string name="pasta_napoli_name">Pasta mit Napoli</string>
+    <string name="pasta_napoli_des">Pasta, Napoli</string>
+
+    //Details Pasta Tuna
+    <string name="pasta_tuna_name">Pasta mit Tunfisch</string>
+    <string name="pasta_tuna_des">Pasta, Tunfisch</string>
+
+    //Details Sandwich Schinken
+    <string name="sandwich_ham_name">Sandwich mit Schinken und Kaese</string>
+    <string name="sandwich_ham_des">Toast, Schinken, Kaese</string>
+
+    //Details Sandwich Tomate
+    <string name="sandwich_tomate_name">Sandwich mit Tomaten und Mozzarella</string>
+    <string name="sandwich_tomate_des">Toast, Tomaten, Mozzarella</string>
+
+    //Details Sandwich Chicken
+    <string name="sandwich_chicken_name">Sandwich mit Huehnchen</string>
+    <string name="sandwich_chicken_des">Toast, Huehnchen</string>
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

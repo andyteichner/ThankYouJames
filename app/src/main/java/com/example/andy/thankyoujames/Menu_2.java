@@ -2,7 +2,6 @@ package com.example.andy.thankyoujames;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -73,9 +72,9 @@ public class Menu_2 extends Activity implements View.OnClickListener{
                         meal_no_3.setText(R.string.muesli_3);
                         break;
                     case 13:
-                        meal_no_1.setText(R.string.beagle_1);
-                        meal_no_2.setText(R.string.beagle_2);
-                        meal_no_3.setText(R.string.beagle_3);
+                        meal_no_1.setText(R.string.bagel_1);
+                        meal_no_2.setText(R.string.bagel_2);
+                        meal_no_3.setText(R.string.bagel_3);
                         break;
                     case 21:
                         meal_no_1.setText(R.string.soup_1);
@@ -112,7 +111,7 @@ public class Menu_2 extends Activity implements View.OnClickListener{
 
         private void finalMenuSelect(int i ){
             int finalFoodID = id*10+i;
-            Intent menuSelect = new Intent(Menu_2.this, ItemClass.class);
+            Intent menuSelect = new Intent(Menu_2.this, ProductActivity.class);
             menuSelect.putExtra("finalFoodID", finalFoodID);
             startActivity(menuSelect);
 
