@@ -20,6 +20,8 @@ public class ItemClass extends Activity implements View.OnClickListener{
     private int finalFoodID;
     private boolean isOfferWitchDiscount = false;
 
+    public static ShoppingCart cart = new ShoppingCart();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +134,8 @@ public class ItemClass extends Activity implements View.OnClickListener{
                 updateCounter(0);
                 break;
             case R.id.shopping_button:
+                for (int i = 1; i <= counter1; i++){
+                cart.addShoppingItem(finalFoodID);}
                 break;
         }
     }

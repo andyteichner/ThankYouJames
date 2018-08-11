@@ -159,6 +159,8 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
                 break;
             case R.id.header_shopping_button:
+                Intent intent = new Intent(MainJames.this, Cart.class);
+                startActivity(intent);
                 break;
             case R.id.main_james_offer_one:
                 startOfferIntent(Constants.MILCHKAFFEE_ID);
