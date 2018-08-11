@@ -1,3 +1,7 @@
+package com.example.andy.thankyoujames.objects;
+
+
+
 public class CartItem {
     private int finalFoodID;
     private int quantity;
@@ -9,11 +13,15 @@ public class CartItem {
         this.price = price;
     }
 
+    public int getFinalFoodID(){
+        return finalFoodID;
+    }
+
     public int getQuantity(){
         return quantity;
     }
 
-    
-
-
+    public double getPrice(){
+        return price;
+    }
 }

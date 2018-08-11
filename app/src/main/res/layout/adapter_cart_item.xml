@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:context=".adapter.CartItemAdapter">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textCartItemName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="0.4"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/textCartItemQuantity"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity ="center"
+        android:layout_weight="0.25" />
+
+    <TextView
+        android:id="@+id/textCartItemPrice"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity ="center"
+        android:layout_weight="0.3"
+        android:text=""/>
+
+
+</LinearLayout>

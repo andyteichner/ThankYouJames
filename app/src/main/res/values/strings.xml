@@ -32,13 +32,13 @@
     <string name="muesli_2">Fruchtmuesli</string>
     <string name="muesli_3">Nussmuesli</string>
 
-    <string name="beagle_1">Sweet Beagle</string>
-    <string name="beagle_2">Fresh Beagle</string>
-    <string name="beagle_3">Default Beagle</string>
+    <string name="beagle_1">Sweet Bagle</string>
+    <string name="beagle_2">Fresh Bagle</string>
+    <string name="beagle_3">Default Bagle</string>
 
-    // Gerichte wenn "noon" ausgeählt wird
+    // Gerichte wenn "noon" ausgewählt wird
     <string name="soup_1">Tomatensuppe</string>
-    <string name="soup_2">Spragelsuppe</string>
+    <string name="soup_2">Spargelsuppe</string>
     <string name="soup_3">Festtagssuppe</string>
 
     <string name="pasta_1">Carbonara</string>
@@ -51,7 +51,7 @@
 
     //Gerichte wenn "evening" gewählt wird
     <string name="pizza_1">Hawaii</string>
-    <string name="pizza_2">Magarita</string>
+    <string name="pizza_2">Margarita</string>
     <string name="pizza_3">Spezial</string>
 
     <string name="meat_1">Burger</string>
@@ -61,6 +61,12 @@
     <string name="fish_1">Fish and Chips</string>
     <string name="fish_2">Lachssteak</string>
     <string name="fish_3">Kalamari</string>
+
+    //Strings des Warenkorbs(activity_cart.xml)
+    <string name ="cart">Warenkorb</string>
+    <string name ="totalPrice">Gesamt: </string>
+    <string name ="continueShop">Weitershoppen</string>
+    <string name ="sendOrder">Bestellen</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

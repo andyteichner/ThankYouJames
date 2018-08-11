@@ -26,7 +26,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     private FragmentTransaction burgerTransaction;
     private boolean fragmentGetsShown = false;
 
-    private MealDatabase mealDatabase;
+    //private MealDatabase mealDatabase;
 
 
     @Override
@@ -39,7 +39,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     }
 
     private void initDB(){
-        mealDatabase = Room.databaseBuilder
+        //mealDatabase = Room.databaseBuilder;
     }
 
     private void initFragment(){

@@ -7,9 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class ProductActivity extends Activity implements View.OnClickListener{
+public class ItemClass extends Activity implements View.OnClickListener{
 
     private Button plusButton, minusButton, shoppingCart;
     private TextView nameTag, descriptionTag, counterText;
@@ -82,7 +81,7 @@ public class ProductActivity extends Activity implements View.OnClickListener{
     //Hier noch überlegen, wie Daten in Cart gespeichert werden können, ohne sofort auf Cart-Activity zu wechseln
     //und stattdessen nur kurzer Toast, dass Item zu Cart hinzugefügt wurde
     private void addToCart(int quantity){
-        Intent intent = new Intent(ProductActivity.this, Cart.class);
+        Intent intent = new Intent(ItemClass.this, Cart.class);
         intent.putExtra("finalFoodID",finalFoodID);
         intent.putExtra("itemQuantity",quantity);
         //Toast.makeText(this,"Item zum Warenkorb hinzugefügt", Toast.LENGTH_SHORT).show();
