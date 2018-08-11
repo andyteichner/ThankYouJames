@@ -134,7 +134,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     }
 
     private void startOfferIntent(int offerID){
-        Intent intent = new Intent(MainJames.this, ProductActivity.class);
+        Intent intent = new Intent(MainJames.this, ItemClass.class);
         intent.putExtra("finalFoodID", offerID);
         startActivity(intent);
 

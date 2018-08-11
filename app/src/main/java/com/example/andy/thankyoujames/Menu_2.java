@@ -111,7 +111,7 @@ public class Menu_2 extends Activity implements View.OnClickListener{
 
         private void finalMenuSelect(int i ){
             int finalFoodID = id*10+i;
-            Intent menuSelect = new Intent(Menu_2.this, ProductActivity.class);
+            Intent menuSelect = new Intent(Menu_2.this, ItemClass.class);
             menuSelect.putExtra("finalFoodID", finalFoodID);
             startActivity(menuSelect);
 
