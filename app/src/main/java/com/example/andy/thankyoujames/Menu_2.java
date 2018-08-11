@@ -1,6 +1,7 @@
 package com.example.andy.thankyoujames;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ public class Menu_2 extends Activity implements View.OnClickListener{
     private Button headerShopping, headerBurger, meal_no_1, meal_no_2, meal_no_3;
     private ImageView headerImage;
 
-    private int menuID, foodID;
+    private int menuID, foodID, id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,9 @@ public class Menu_2 extends Activity implements View.OnClickListener{
         meal_no_1 = findViewById(R.id.submeal_no1_menu2);
         meal_no_2 = findViewById(R.id.submeal_no2_menu2);
         meal_no_3 = findViewById(R.id.submeal_no3_menu2);
+        meal_no_1.setOnClickListener(this);
+        meal_no_2.setOnClickListener(this);
+        meal_no_3.setOnClickListener(this);
 
     }
 
@@ -54,7 +58,7 @@ public class Menu_2 extends Activity implements View.OnClickListener{
     //in dieser Methode sollen die Texte und Bilder angepasst werden, jenachdem welches Menü ausgewählt worden ist
     private void setTexts (int menuIdentifier, int foodIdentifier){
 
-       int id = menuIdentifier*10+foodIdentifier;
+        id = menuIdentifier*10+foodIdentifier;
 
 
                 switch (id){
@@ -106,6 +110,14 @@ public class Menu_2 extends Activity implements View.OnClickListener{
                 }
         }
 
+        private void finalMenuSelect(int i ){
+            int finalFoodID = id*10+i;
+            Intent menuSelect = new Intent(Menu_2.this, ItemClass.class);
+            menuSelect.putExtra("finalFoodID", finalFoodID);
+            startActivity(menuSelect);
+
+        }
+
 
 
 
@@ -119,11 +131,14 @@ public class Menu_2 extends Activity implements View.OnClickListener{
                 break;
             case R.id.header_shopping_button:
                 break;
-            case R.id.supermeal_no1:
+            case R.id.submeal_no1_menu2:
+               finalMenuSelect(1);
                 break;
-            case R.id.supermeal_no2:
+            case R.id.submeal_no2_menu2:
+               finalMenuSelect(2);
                 break;
-            case R.id.supermeal_no3:
+            case R.id.submeal_no3_menu2:
+                finalMenuSelect(3);
                 break;
         }
     }

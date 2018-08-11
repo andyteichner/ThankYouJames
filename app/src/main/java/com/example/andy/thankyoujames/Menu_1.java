@@ -53,8 +53,9 @@ public class Menu_1 extends Activity implements View.OnClickListener {
         meal_no_2.setOnClickListener(this);
         meal_no_3.setOnClickListener(this);
 
-
     }
+
+
 
     //in dieser Methode sollen die Texte und Bilder angepasst werden, jenachdem welches Menü ausgewählt worden ist 
     private void setTexts() {

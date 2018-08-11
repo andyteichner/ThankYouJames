@@ -1,7 +1,9 @@
 package com.example.andy.thankyoujames;
 
 import android.app.Activity;
+import android.arch.persistence.room.Room;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +22,11 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     private ImageButton offerOne, offerTwo;
 
     private BurgerMenu  burgerMenu;
+    private FragmentManager burgerManager;
+    private FragmentTransaction burgerTransaction;
     private boolean fragmentGetsShown = false;
+
+    private MealDatabase mealDatabase;
 
 
     @Override
@@ -32,16 +38,15 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
     }
 
+    private void initDB(){
+        mealDatabase = Room.databaseBuilder
+    }
+
     private void initFragment(){
 
         //BurgerMenu
         burgerMenu = new BurgerMenu();
-
-        FragmentTransaction burgerTransaction = getSupportFragmentManager().beginTransaction();
-
-               burgerTransaction.add(R.id.fragment_mainJames, burgerMenu)
-                .commit();
-        fragmentGetsShown = !fragmentGetsShown;
+       burgerManager = getSupportFragmentManager();
     }
 
     private void initView(){
@@ -49,7 +54,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         headerBurger = findViewById(R.id.header_burger_button);
         headerShopping = findViewById(R.id.header_shopping_button);
         headerBurger.setOnClickListener(this);
-        headerBurger.setOnClickListener(this);
+        headerShopping.setOnClickListener(this);
 
         // ImageViews
         headerImage = findViewById(R.id.header_image);
@@ -73,7 +78,17 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         // TODO: 29.07.2018  intents für die Angebote sowie das Fragment und den Warenkorb
         switch (view.getId()){
             case R.id.header_burger_button:
-                
+               burgerTransaction = getSupportFragmentManager().beginTransaction();
+                burgerTransaction.setCustomAnimations(android.R.animator.fade_in,
+                        android.R.animator.fade_out);
+                if (burgerMenu.isHidden()) {
+                    burgerTransaction.show(burgerMenu);
+
+                } else {
+                    burgerTransaction.hide(burgerMenu);
+                }
+                burgerTransaction.commit();
+
                 break;
             case R.id.header_shopping_button:
                 break;
