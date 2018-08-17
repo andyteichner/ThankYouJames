@@ -5,6 +5,12 @@
     <string name="main_header_text">James</string>
     <string name="main_offer_text">Highlight der Woche</string>
 
+    //Texte Warenkorb
+    <string name="cart">Warenkorb</string>
+    <string name="totalPrice">Gesamt:</string>
+    <string name="continueShop">weiter Shoppen</string>
+    <string name="sendOrder">Bestellen</string>
+
     //Fragement Texte
     <string name="fragment_morning">Morgen</string>
     <string name="fragment_noon">Mittag</string>

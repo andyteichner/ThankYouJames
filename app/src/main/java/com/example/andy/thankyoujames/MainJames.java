@@ -3,7 +3,6 @@ package com.example.andy.thankyoujames;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
@@ -22,9 +21,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     private ImageButton offerOne, offerTwo;
 
     private BurgerMenu  burgerMenu;
-    private FragmentManager burgerManager;
     private FragmentTransaction burgerTransaction;
-    private boolean fragmentGetsShown = false;
 
     public static MealDatabase mealDatabase;
 
@@ -66,30 +63,49 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
                     if( mealDatabase.daoAccess().numberOfRows() == 0) {
                         //Kaffee
                     Meal milchkaffee = createNewMeal(Constants.MILCHKAFFEE_ID, R.string.milchkaffee_name, R.string.milchkaffee_des, R.drawable.test_image, Constants.milchkaffee_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(milchkaffee);
+                    mealDatabase.daoAccess().insertMealIntoDB(milchkaffee);
                     Meal cappuccino = createNewMeal(Constants.CAPPUCCINO_ID, R.string.cappu_name, R.string.cappu_des, R.drawable.test_image, Constants.cappu_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(cappuccino);
+                    mealDatabase.daoAccess().insertMealIntoDB(cappuccino);
                     Meal espresso = createNewMeal(Constants.ESPRESSO_ID, R.string.espresso_name, R.string.espresso_des,  R.drawable.test_image, Constants.espresso_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(espresso);
+                    mealDatabase.daoAccess().insertMealIntoDB(espresso);
                         //Muesli
                     Meal schokomu = createNewMeal(Constants.SCHOKOMUESLI, R.string.schokomu_name, R.string.schokomu_des,R.drawable.test_image, Constants.schokomu_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(schokomu);
+                    mealDatabase.daoAccess().insertMealIntoDB(schokomu);
                     Meal fruchtmu = createNewMeal(Constants.FRUCHTMUESLI, R.string.fruchtmu_name, R.string.fruchtmu_des, R.drawable.test_image, Constants.fruchtmu_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(fruchtmu);
+                    mealDatabase.daoAccess().insertMealIntoDB(fruchtmu);
                     Meal nussmu = createNewMeal(Constants.NUSSMUESLI, R.string.nussmu_name, R.string.nussmu_des, R.drawable.test_image, Constants.nussmu_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(nussmu);
+                    mealDatabase.daoAccess().insertMealIntoDB(nussmu);
                         //Bagels
                     Meal sweetbagel = createNewMeal(Constants.SWEETBAGEL, R.string.sweetbagel_name, R.string.sweetbagel_des, R.drawable.test_image, Constants.sweetbagel_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(sweetbagel);
+                    mealDatabase.daoAccess().insertMealIntoDB(sweetbagel);
                     Meal freshbagel = createNewMeal(Constants.FRESHBAGEL, R.string.freshbagel_name, R.string.freshbagel_des, R.drawable.test_image, Constants.freshbagel_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(freshbagel);
+                    mealDatabase.daoAccess().insertMealIntoDB(freshbagel);
                     Meal defaultBagel = createNewMeal(Constants.DEFAULTBAGEL, R.string.defaultbagel_name, R.string.defaultbagel_des, R.drawable.test_image, Constants.defaultbagel_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(defaultBagel);
-                        //Suppe
+                    mealDatabase.daoAccess().insertMealIntoDB(defaultBagel);
+                    /*    //Suppe
                     Meal tomatensuppe = createNewMeal(Constants.TOAMTENSUPPE, R.string.tomatensuppe_name, R.string.toamtensuppe_des, R.drawable.test_image,Constants.toamtensuppe_price);
-                    mealDatabase.daoAccess().insertOnlySingleFriend(tomatensuppe);
+                    mealDatabase.daoAccess().insertMealIntoDB(tomatensuppe);
+                    Meal spargelsupee = createNewMeal(Constants.SPARGELSUPPE, R.string.spargelsuppe_name, R.string.spargelsuppe_des, R.drawable.test_image,Constants.spargelsuppe_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(tomatensuppe);
+                    Meal festtagssuppe = createNewMeal(Constants.FESTTAGSSUPEE, R.string.festtagssuppe_name, R.string.festtagssuppe_des, R.drawable.test_image, Constants.festtagssuppe_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(festtagssuppe);
+                        //Pasta
+                    Meal carbonara = createNewMeal(Constants.PASTA_CARBONARA, R.string.pasta_carbonara_name, R.string.pasta_carbonara_des, R.drawable.test_image, Constants.pasta_carbonara_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(carbonara);
+                    Meal napoli = createNewMeal(Constants.PASTA_NAPOLI, R.string.pasta_napoli_name, R.string.pasta_napoli_des, R.drawable.test_image, Constants.pasta_napoli_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(napoli);
+                    Meal tuna = createNewMeal(Constants.PASTA_TUNA, R.string.pasta_tuna_name, R.string.pasta_tuna_des, R.drawable.test_image, Constants.pasta_tuna_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(tuna);
+                        //Sandwiches
+                    Meal hamSandwich = createNewMeal(Constants.SANDWICH_HAM, R.string.sandwich_ham_name, R.string.sandwich_ham_des, R.drawable.test_image, Constants.sandwich_ham_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(hamSandwich);
+                    Meal tomatoSandwich = createNewMeal(Constants.SANDWICH_TOMATE, R.string.sandwich_tomate_name, R.string.sandwich_tomate_des, R.drawable.test_image, Constants.sandwich_tomate_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(tomatoSandwich);
+                    Meal chickenSandwich = createNewMeal(Constants.SANDWICH_CHICKEN, R.string.sandwich_chicken_name, R.string.sandwich_chicken_des, R.drawable.test_image, Constants.sandwich_chicken_price);
+                    mealDatabase.daoAccess().insertMealIntoDB(chickenSandwich);*/
     }}
             }).start();
+
 
 
     }

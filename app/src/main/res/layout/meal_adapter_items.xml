@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/adapter_name"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/adapter_desc"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adapter_name"
+        android:text="Test"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/adapter_price"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/adapter_desc"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:text="Test"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

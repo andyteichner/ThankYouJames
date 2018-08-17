@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ItemClass extends Activity implements View.OnClickListener{
 
-    private Button plusButton, minusButton, shoppingCart;
+    private Button plusButton, minusButton, shoppingCartButton;
     private TextView nameTag, descriptionTag, counterText, priceTag;
     private ImageView ImageTag;
 
@@ -19,8 +20,9 @@ public class ItemClass extends Activity implements View.OnClickListener{
     private int counter1 = 1;
     private int finalFoodID;
     private boolean isOfferWitchDiscount = false;
+    private String selectedMeal;
 
-    public static ShoppingCart cart = new ShoppingCart();
+    public static ShoppingCart shoppingCart = new ShoppingCart();
 
 
     @Override
@@ -61,6 +63,7 @@ public class ItemClass extends Activity implements View.OnClickListener{
                 resultMeal = MainJames.mealDatabase.daoAccess().fetchOneMealbyMealID(finalFoodID);
                 if (resultMeal != null){
                     final String mealName = resultMeal.getMealName();
+                    selectedMeal = resultMeal.getMealName();
                     final String mealDes = resultMeal.getDescription();
                     double realPrice = resultMeal.getPrice();
                     if (isOfferWitchDiscount == true){
@@ -74,7 +77,7 @@ public class ItemClass extends Activity implements View.OnClickListener{
                         public void run() {
                             nameTag.setText(mealName);
                             descriptionTag.setText(mealDes);
-                            priceTag.setText(mealPrice);
+                            priceTag.setText(mealPrice + "€");
                             ImageTag.setImageDrawable(mealImage);
                             if (isOfferWitchDiscount){
                                 priceTag.setTextColor(Color.GREEN);
@@ -91,10 +94,10 @@ public class ItemClass extends Activity implements View.OnClickListener{
         //Buttons
         plusButton = findViewById(R.id.counter_plus);
         minusButton = findViewById(R.id.counter_minus);
-        shoppingCart = findViewById(R.id.shopping_button);
+        shoppingCartButton = findViewById(R.id.shopping_button);
         plusButton.setOnClickListener(this);
         minusButton.setOnClickListener(this);
-        shoppingCart.setOnClickListener(this);
+        shoppingCartButton.setOnClickListener(this);
 
         //TextView
 
@@ -135,7 +138,8 @@ public class ItemClass extends Activity implements View.OnClickListener{
                 break;
             case R.id.shopping_button:
                 for (int i = 1; i <= counter1; i++){
-                cart.addShoppingItem(finalFoodID);}
+                shoppingCart.addShoppingItem(finalFoodID);}
+                Toast.makeText(this, ""+ counter1 + " "+selectedMeal+" zum Warenkorb hinzugefügt", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

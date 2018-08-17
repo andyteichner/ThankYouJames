@@ -7,7 +7,7 @@ import android.arch.persistence.room.Query;
 @Dao
 public interface DaoAccess {
     @Insert
-    void insertOnlySingleFriend(Meal meal);
+    void insertMealIntoDB(Meal meal);
 
     @Query("SELECT * FROM meal WHERE mealID = :mealNumber")
     Meal fetchOneMealbyMealID(int mealNumber);

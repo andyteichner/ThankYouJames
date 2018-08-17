@@ -31,7 +31,7 @@ public abstract class Constants {
     public static final int PASTA_TUNA = 223;
 
     public static final int SANDWICH_HAM = 231;
-    public static final int SANDWICH_TOAMATE = 232;
+    public static final int SANDWICH_TOMATE = 232;
     public static final int SANDWICH_CHICKEN = 233;
 
     public static final int PIZZA_HAWAII = 311;
@@ -47,22 +47,48 @@ public abstract class Constants {
     public static final int FISH_KALAMIR = 333;
 
 
-  public static final double sandwich_chicken_price = 4.50;
+
+    //Preise Kaffe
+    public static final double  milchkaffee_price =3.60;
+    public static final double  cappu_price =3.60;
+    public static final double espresso_price =2.20;
+
+    //Preise Muesli
+    public static final double schokomu_price =3.00;
+    public static final double  fruchtmu_price=3.30;
+    public static final double nussmu_price = 3.00;
+
+    //Preise Bagels
+    public static final double sweetbagel_price =4.00;
+    public static final double freshbagel_price =4.00;
+    public static final double  defaultbagel_price = 2.00;
+
+    //Preise Suppen
+    public static final double  toamtensuppe_price =3.50;
+    public static final double  spargelsuppe_price = 3.50;
+    public static final double  festtagssuppe_price =4.00;
+
+    //Preise Pasta
+    public static final double  pasta_carbonara_price =6.00;
+    public static final double  pasta_napoli_price =5.50;
+    public static final double pasta_tuna_price =6.50;
+
+    //Preise Sandwiches
+    public static final double sandwich_chicken_price = 4.50;
     public static final double sandwich_tomate_price =4.50;
     public static final double sandwich_ham_price = 4.50;
-    public static final double pasta_tuna_price =6.50;
-    public static final double  pasta_napoli_price =5.50;
-    public static final double  pasta_carbonara_price =6.00;
-    public static final double  festtagssuppe_price =4.00;
-    public static final double  spargelsuppe_price = 3.50;
-    public static final double  toamtensuppe_price =3.50;
-    public static final double  defaultbagel_price = 2.00;
-    public static final double  freshbagel_price = 4.00;
-    public static final double sweetbagel_price =4.00;
-    public static final double nussmu_price = 3.00;
-    public static final double  fruchtmu_price=3.30;
-    public static final double schokomu_price =3.00;
-    public static final double espresso_price =2.20;
-    public static final double  cappu_price =3.60;
-    public static final double  milchkaffee_price =3.60;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

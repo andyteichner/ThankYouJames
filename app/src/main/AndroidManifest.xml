@@ -19,7 +19,7 @@
         <activity android:name=".Menu_1" />
         <activity android:name=".Menu_2" />
         <activity android:name=".ItemClass" />
-        <activity android:name=".Cart"></activity>
+        <activity android:name=".Cart" />
     </application>
 
 </manifest>

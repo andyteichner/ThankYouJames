@@ -24,5 +24,9 @@ public class ShoppingCart {
         }
     }
 
+    public void removeSingleItem(int position){
+        shoppingItems.remove(position);
+    }
+
 
 }
