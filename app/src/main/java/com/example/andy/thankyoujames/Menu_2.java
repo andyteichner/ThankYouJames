@@ -27,9 +27,6 @@ public class Menu_2 extends Activity implements View.OnClickListener{
 
     private void initViews(){
 
-        //TextViews
-        headerText = findViewById(R.id.header_text_menu2);
-
         //Buttons
         headerBurger = findViewById(R.id.header_burger_button_menu2);
         headerShopping = findViewById(R.id.header_shopping_button_menu2);
@@ -65,6 +62,7 @@ public class Menu_2 extends Activity implements View.OnClickListener{
                         meal_no_1.setText(R.string.coffee_1);
                         meal_no_2.setText(R.string.coffee_2);
                         meal_no_3.setText(R.string.coffee_3);
+                        headerImage.setImageResource(R.drawable.coffee);
                         break;
                     case 12:
                         meal_no_1.setText(R.string.muesli_1);
@@ -129,6 +127,8 @@ public class Menu_2 extends Activity implements View.OnClickListener{
             case R.id.header_burger_button:
                 break;
             case R.id.header_shopping_button:
+                Intent goToCart = new Intent(this,Cart.class);
+                startActivity(goToCart);
                 break;
             case R.id.submeal_no1_menu2:
                finalMenuSelect(1);

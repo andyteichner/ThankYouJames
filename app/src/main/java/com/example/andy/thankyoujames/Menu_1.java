@@ -35,9 +35,6 @@ public class Menu_1 extends Activity implements View.OnClickListener {
 
     private void initViews() {
 
-        //TextViews
-        headerText = findViewById(R.id.header_text_menu1);
-
         //Buttons
         headerBurger = findViewById(R.id.header_burger_button_menu1);
         headerShopping = findViewById(R.id.header_shopping_button_menu1);
@@ -96,6 +93,8 @@ public class Menu_1 extends Activity implements View.OnClickListener {
                 case R.id.header_burger_button:
                     break;
                 case R.id.header_shopping_button:
+                    Intent goToCart = new Intent(this,Cart.class);
+                    startActivity(goToCart);
                     break;
                 case R.id.supermeal_no1:
                     sendIntents(1);

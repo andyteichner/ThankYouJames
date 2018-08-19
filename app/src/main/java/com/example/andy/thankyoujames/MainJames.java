@@ -1,7 +1,11 @@
 package com.example.andy.thankyoujames;
 
+import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
@@ -17,13 +21,14 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
     private ImageView   headerImage;
     private TextView    headerText, offerText;
-    private Button      headerBurger, headerShopping;
-    private ImageButton offerOne, offerTwo;
+    private ImageButton offerOne, offerTwo, headerBurger, headerShopping;;
 
     private BurgerMenu  burgerMenu;
     private FragmentTransaction burgerTransaction;
 
     public static MealDatabase mealDatabase;
+
+    public static final String CHANNEL_ID = "foodisready";
 
 
     @Override
@@ -33,6 +38,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         initView();
         initFragment();
         initDB();
+        createNotificationChannel();
         deleteDatabaseEntries();
         fillDatabase();
 
@@ -55,6 +61,21 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         return meal;
     }
 
+    //Quelle:https://codinginflow.com/tutorials/android/foreground-service
+    private void createNotificationChannel(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel serviceChannel = new NotificationChannel(
+                    CHANNEL_ID,
+                    "Essen ist fertig",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
+
+    }
+
     private void fillDatabase(){
 
             new Thread(new Runnable() {
@@ -62,11 +83,11 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
                 public void run() {
                     if( mealDatabase.daoAccess().numberOfRows() == 0) {
                         //Kaffee
-                    Meal milchkaffee = createNewMeal(Constants.MILCHKAFFEE_ID, R.string.milchkaffee_name, R.string.milchkaffee_des, R.drawable.test_image, Constants.milchkaffee_price);
+                    Meal milchkaffee = createNewMeal(Constants.MILCHKAFFEE_ID, R.string.milchkaffee_name, R.string.milchkaffee_des, R.drawable.coffee, Constants.milchkaffee_price);
                     mealDatabase.daoAccess().insertMealIntoDB(milchkaffee);
-                    Meal cappuccino = createNewMeal(Constants.CAPPUCCINO_ID, R.string.cappu_name, R.string.cappu_des, R.drawable.test_image, Constants.cappu_price);
+                    Meal cappuccino = createNewMeal(Constants.CAPPUCCINO_ID, R.string.cappu_name, R.string.cappu_des, R.drawable.coffee, Constants.cappu_price);
                     mealDatabase.daoAccess().insertMealIntoDB(cappuccino);
-                    Meal espresso = createNewMeal(Constants.ESPRESSO_ID, R.string.espresso_name, R.string.espresso_des,  R.drawable.test_image, Constants.espresso_price);
+                    Meal espresso = createNewMeal(Constants.ESPRESSO_ID, R.string.espresso_name, R.string.espresso_des,  R.drawable.coffee, Constants.espresso_price);
                     mealDatabase.daoAccess().insertMealIntoDB(espresso);
                         //Muesli
                     Meal schokomu = createNewMeal(Constants.SCHOKOMUESLI, R.string.schokomu_name, R.string.schokomu_des,R.drawable.test_image, Constants.schokomu_price);
@@ -138,7 +159,6 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         headerImage = findViewById(R.id.header_image);
 
         // TextViews
-        headerText = findViewById(R.id.header_text);
         offerText = findViewById(R.id.main_james_offer_text);
 
         // ImageButtons

@@ -11,30 +11,14 @@
         android:src="@drawable/test_image"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
         ></ImageView>
-
-    <TextView
-        android:id="@+id/header_text_menu2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/header_image_menu2"
-        android:layout_alignTop="@+id/header_image_menu2"
-        android:layout_alignRight="@+id/header_image_menu2"
-        android:layout_alignBottom="@+id/header_image_menu2"
-        android:layout_margin="1dp"
-        android:gravity="center"
-        android:text="@string/main_header_text"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        ></TextView>
 
     <Button
         android:id="@+id/header_burger_button_menu2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/header_image_menu2"
         android:text="B"
         />
 
@@ -42,8 +26,7 @@
         android:id="@+id/header_shopping_button_menu2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/header_image_menu2"
-        android:layout_alignRight="@+id/header_image_menu2"
+        android:layout_alignParentRight="true"
         android:text="WK"
         />
 
@@ -55,7 +38,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/submeal_no1_menu2"
             android:layout_below="@id/header_image"
 
@@ -63,14 +46,14 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/submeal_no2_menu2"
             android:layout_below="@id/submeal_no1_menu2"
             />
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/submeal_no3_menu2"
             android:layout_below="@id/submeal_no2_menu2"
             />
