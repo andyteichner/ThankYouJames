@@ -32,7 +32,6 @@ public class TimerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_timer);
         initView();
         setTime();
-        setAlarm();
 
     }
 
@@ -77,6 +76,9 @@ public class TimerActivity extends AppCompatActivity {
                     time = time + (1000 * 60 * 60 * 24);
             }
             alarm_manager.set(AlarmManager.RTC_WAKEUP, time, pendingIntent);
+
+
+
 
 
     }
