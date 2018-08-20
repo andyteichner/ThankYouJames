@@ -42,7 +42,7 @@ public class ItemClass extends Activity implements View.OnClickListener{
 
     }
 
-        private void checkForOffer(){
+    private void checkForOffer(){
             if(finalFoodID == Constants.OFFER_ONE || finalFoodID == Constants.OFFER_TWO){
                 isOfferWitchDiscount = true;
             }else {
@@ -50,10 +50,7 @@ public class ItemClass extends Activity implements View.OnClickListener{
             }
     }
 
-    private double getDiscount(double price){
-         double result = price*Constants.DISCOUNT;
-        return result;
-    }
+
 
 
     private void setTexts(){
@@ -67,9 +64,6 @@ public class ItemClass extends Activity implements View.OnClickListener{
                     selectedMeal = resultMeal.getMealName();
                     final String mealDes = resultMeal.getDescription();
                     double realPrice = resultMeal.getPrice();
-                    if (isOfferWitchDiscount == true){
-                         realPrice = getDiscount(realPrice);
-                    }
                     final String mealPrice =""+ realPrice;
                     final int mealImageID = resultMeal.getImageID();
                     final Drawable mealImage = getDrawable(mealImageID);
