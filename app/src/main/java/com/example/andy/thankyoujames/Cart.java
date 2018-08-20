@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Cart extends Activity implements View.OnClickListener{
@@ -21,6 +22,7 @@ public class Cart extends Activity implements View.OnClickListener{
     private ListView itemList;
     private MealListAdapter adapter;
 
+    private double sumPrice = 0;
 
     private ArrayList<Integer> shoppingItems;
     private ArrayList<Meal> shoppedMeals = new ArrayList<>();
@@ -37,7 +39,7 @@ public class Cart extends Activity implements View.OnClickListener{
         initViews();
         getShoppingItems();
         setUpListView();
-        setTexts();
+
     }
 
     private void initViews(){
@@ -73,6 +75,7 @@ public class Cart extends Activity implements View.OnClickListener{
                     newShoppedMeal = MainJames.mealDatabase.daoAccess().fetchOneMealbyMealID(shoppingItems.get(i));
                     shoppedMeals.add(newShoppedMeal);
                     }
+                    setTexts();
                 }
             }).start();
 
@@ -91,42 +94,48 @@ public class Cart extends Activity implements View.OnClickListener{
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
                 itemLongClicked(position);
-                setTexts();
                 return false;
             }
         });
 
     }
 
-    private double getTotalPrice(){
+    private void getTotalPrice(){
 
-        double result = 0;
         for (int i = 0; i < shoppedMeals.size(); i++){
 
-            result += shoppedMeals.get(i).getPrice();
+            sumPrice += shoppedMeals.get(i).getPrice();
         }
 
-        return result;
+    }
+
+    private void updatePrice(int position){
+
+        double minusPrice = shoppedMeals.get(position).getPrice();
+        sumPrice = sumPrice - minusPrice;
+        textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+"€");
+
     }
 
 
 
     private void setTexts(){
-
-        String result = ""+ getTotalPrice();
-
-        textSumPrice.setText(result);
+        getTotalPrice();
+        textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+ "€" );
     }
 
     private void clearShoppingCart(){
 
+        sumPrice = 0;
         shoppingItems.clear();
         shoppedMeals.clear();
         adapter.notifyDataSetChanged();
+        textSumPrice.setText( 0 + "€");
     }
 
     private void itemLongClicked(int position){
 
+        updatePrice(position);
         shoppingItems.remove(position);
         shoppedMeals.remove(position);
         adapter.notifyDataSetChanged();
