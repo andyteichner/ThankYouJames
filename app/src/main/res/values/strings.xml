@@ -11,6 +11,19 @@
     <string name="continueShop">weiter Shoppen</string>
     <string name="sendOrder">Bestellen</string>
 
+    //Texte TimerActivity
+    <string name="textTimerHeader">Wann möchten Sie Ihre Bestellung abholen?</string>
+    <string name="finalSendOrder">Bestellung Absenden</string>
+
+    //Texte OrderSubmitted
+    <string name="thankyou">Vielen Dank für Ihre Bestellung!</string>
+    <string name="txtPleasePickUp">Bitte holen Sie Ihre Bestellung ab um: </string>
+
+    //Notifications
+    <string name="foodready">FoodReady</string>
+    <string name="description">Das ist eine Beschreibung</string>
+
+
     //Fragement Texte
     <string name="fragment_morning">Morgen</string>
     <string name="fragment_noon">Mittag</string>

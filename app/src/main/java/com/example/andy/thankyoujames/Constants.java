@@ -8,6 +8,9 @@ public abstract class Constants {
 
     public static final double DISCOUNT = 0.7;
 
+    //Notification-Channel IDs
+    public static final String FOODREADY= "food is ready";
+
     // Ids für die einzelnen Gerichte
 
     public static final int MILCHKAFFEE_ID = 111;
@@ -77,6 +80,7 @@ public abstract class Constants {
     public static final double sandwich_chicken_price = 4.50;
     public static final double sandwich_tomate_price =4.50;
     public static final double sandwich_ham_price = 4.50;
+
 
 
 

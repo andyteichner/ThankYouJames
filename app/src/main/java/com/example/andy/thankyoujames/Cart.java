@@ -137,7 +137,8 @@ public class Cart extends Activity implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.btnSendOrder:
-                Toast.makeText(this, "Ihre Bestellung wurde abgeschickt", Toast.LENGTH_SHORT).show();
+                Intent getToTimer = new Intent(Cart.this, TimerActivity.class);
+                startActivity(getToTimer);
                 break;
             case R.id.btnClearCart:
                 clearShoppingCart();

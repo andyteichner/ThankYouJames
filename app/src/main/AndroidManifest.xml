@@ -20,6 +20,11 @@
         <activity android:name=".Menu_2" />
         <activity android:name=".ItemClass" />
         <activity android:name=".Cart" />
+        <activity android:name=".TimerActivity" />
+        <activity android:name=".OrderSubmitted">
+        </activity>
+        <service android:enabled="true" android:name=".AlarmService" />
+
     </application>
 
 </manifest>

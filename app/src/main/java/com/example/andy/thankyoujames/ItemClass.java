@@ -1,6 +1,7 @@
 package com.example.andy.thankyoujames;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 public class ItemClass extends Activity implements View.OnClickListener{
 
-    private Button plusButton, minusButton, shoppingCartButton;
+    private Button plusButton, minusButton, shoppingCartButton, headerBurger, headerShopping;
     private TextView nameTag, descriptionTag, counterText, priceTag;
     private ImageView ImageTag;
 
@@ -95,9 +96,13 @@ public class ItemClass extends Activity implements View.OnClickListener{
         plusButton = findViewById(R.id.counter_plus);
         minusButton = findViewById(R.id.counter_minus);
         shoppingCartButton = findViewById(R.id.shopping_button);
+        headerBurger = findViewById(R.id.header_burger_button_itemcl);
+        headerShopping = findViewById(R.id.header_shopping_button_itemcl);
         plusButton.setOnClickListener(this);
         minusButton.setOnClickListener(this);
         shoppingCartButton.setOnClickListener(this);
+        headerBurger.setOnClickListener(this);
+        headerShopping.setOnClickListener(this);
 
         //TextView
 
@@ -130,6 +135,12 @@ public class ItemClass extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch(view.getId()){
+            case R.id.header_burger_button_itemcl:
+                break;
+            case R.id.header_shopping_button_itemcl:
+                Intent goToCart = new Intent(this,Cart.class);
+                startActivity(goToCart);
+                break;
             case R.id.counter_plus:
                 updateCounter(1);
                 break;

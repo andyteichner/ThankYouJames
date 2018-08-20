@@ -8,44 +8,31 @@
 
     <ImageView
         android:id="@+id/header_image"
-        android:src="@drawable/test_image"
+        android:src="@drawable/headerimage"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         ></ImageView>
 
-    <TextView
-        android:id="@+id/header_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/header_image"
-        android:layout_alignTop="@+id/header_image"
-        android:layout_alignRight="@+id/header_image"
-        android:layout_alignBottom="@+id/header_image"
-        android:layout_margin="1dp"
-        android:gravity="center"
-        android:text="@string/main_header_text"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        ></TextView>
 
-    <Button
+    <ImageButton
         android:id="@+id/header_burger_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/header_image"
-        android:text="B"
-        />
+        android:background="@drawable/burgericon2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
-    <Button
+    <ImageButton
         android:id="@+id/header_shopping_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/header_image"
-        android:layout_alignRight="@+id/header_image"
-        android:text="WK"
-        />
+        android:background="@drawable/carticon2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="" />
 
 
 
@@ -56,25 +43,33 @@
         android:layout_below="@+id/header_image"
         android:layout_centerHorizontal="true"
         android:text="@string/main_offer_text"
-        android:textSize="20sp"/>
+        android:textSize="25sp"/>
 
-    <ImageButton
-        android:layout_width="130dp"
-        android:layout_height="200dp"
-        android:id="@+id/main_james_offer_one"
-        android:layout_below="@id/main_james_offer_text"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"/>
+    <LinearLayout
+        android:id="@+id/linlayMainJames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="139dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:id="@+id/main_james_offer_one"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:layout_marginRight="10dp" />
 
 
-    <ImageButton
-        android:layout_width="130dp"
-        android:layout_height="200dp"
-        android:id="@+id/main_james_offer_two"
-        android:layout_below="@id/main_james_offer_text"
-        android:layout_toRightOf="@id/main_james_offer_one"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"/>
+        <ImageButton
+            android:id="@+id/main_james_offer_two"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment_mainJames"
