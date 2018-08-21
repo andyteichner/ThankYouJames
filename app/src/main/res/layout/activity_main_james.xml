@@ -1,85 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainJames">
 
-    <ImageView
-        android:id="@+id/header_image"
-        android:src="@drawable/headerimage"
-        android:layout_centerHorizontal="true"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        ></ImageView>
+        android:layout_height="match_parent">
 
-
-    <ImageButton
-        android:id="@+id/header_burger_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/burgericon2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
-
-    <ImageButton
-        android:id="@+id/header_shopping_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/carticon2"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:text="" />
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_james_offer_text"
-        android:layout_below="@+id/header_image"
-        android:layout_centerHorizontal="true"
-        android:text="@string/main_offer_text"
-        android:textSize="25sp"/>
-
-    <LinearLayout
-        android:id="@+id/linlayMainJames"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="139dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        >
-
-        <ImageButton
-            android:id="@+id/main_james_offer_one"
-            android:layout_width="130dp"
-            android:layout_height="200dp"
-            android:layout_marginRight="10dp" />
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/headerimage"></ImageView>
 
 
         <ImageButton
-            android:id="@+id/main_james_offer_two"
-            android:layout_width="130dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="10dp" />
+            android:id="@+id/header_burger_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/burgericon2" />
 
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/fragment_mainJames"
-        android:name="com.example.andy.thankyoujames.BurgerMenu"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="0dp"
-        android:layout_marginStart="42dp" />
+        <ImageButton
+            android:id="@+id/header_shopping_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/carticon2"
+            android:text="" />
 
 
-</RelativeLayout>
+        <LinearLayout
+            android:id="@+id/textLinLayMain"
+            android:layout_below="@id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/main_james_offer_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/main_offer_text"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/linlayMainJames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="86dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/main_james_offer_one"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginRight="10dp" />
+
+
+                <ImageButton
+                    android:id="@+id/main_james_offer_two"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fragment_mainJames"
+            android:name="com.example.andy.thankyoujames.BurgerMenu"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+        </FrameLayout>
+    </RelativeLayout>
+
+
+</ScrollView>

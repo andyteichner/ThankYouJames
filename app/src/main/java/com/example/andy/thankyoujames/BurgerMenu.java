@@ -14,14 +14,14 @@ import android.widget.TextView;
 
 public class BurgerMenu extends Fragment {
 
-    private TextView    jamesText;
+    //private TextView    jamesText;
     private Button      morningButton, noonBottun, eveningButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_burger_menu, container, false );
-        jamesText = v.findViewById(R.id.fragment_text);
+        //jamesText = v.findViewById(R.id.fragment_text);
         morningButton = v.findViewById(R.id.morning_button);
         morningButton.setOnClickListener(new View.OnClickListener() {
 

@@ -4,6 +4,7 @@
     // Texte der MainJames Activity
     <string name="main_header_text">James</string>
     <string name="main_offer_text">Highlight der Woche</string>
+    <string name="openingHours"> Öffnungszeiten</string>
 
     //Texte Warenkorb
     <string name="cart">Warenkorb</string>
