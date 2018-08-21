@@ -17,4 +17,7 @@ public interface DaoAccess {
 
     @Query("DELETE FROM meal")
     void nukeTable();
+
+    @Query("UPDATE meal SET price = :newMealPrice WHERE mealID = :mealNumber")
+    void updateMealPrice(double newMealPrice, int mealNumber);
 }

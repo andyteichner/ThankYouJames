@@ -42,6 +42,8 @@ public class MealListAdapter extends BaseAdapter {
 
         adapterName.setText(shoppedMealList.get(i).getMealName());
         adapterDesc.setText(shoppedMealList.get(i).getDescription());
+
+
         adapterPrice.setText(String.valueOf(shoppedMealList.get(i).getPrice())+ "€");
 
         v.setTag(shoppedMealList.get(i).getMealID());

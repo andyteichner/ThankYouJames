@@ -41,6 +41,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         createNotificationChannel();
         deleteDatabaseEntries();
         fillDatabase();
+        //updateForOffers();
 
     }
 
@@ -124,12 +125,32 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
                     mealDatabase.daoAccess().insertMealIntoDB(tomatoSandwich);
                     Meal chickenSandwich = createNewMeal(Constants.SANDWICH_CHICKEN, R.string.sandwich_chicken_name, R.string.sandwich_chicken_des, R.drawable.test_image, Constants.sandwich_chicken_price);
                     mealDatabase.daoAccess().insertMealIntoDB(chickenSandwich);*/
-    }}
+
+                        Meal offerMealOne = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_ONE);
+                        Meal offerMealTwo = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_TWO);
+                        double offerPriceOne = offerMealOne.getPrice() * 0.7;
+                        double offerPriceTwo = offerMealTwo.getPrice() * 0.7;
+                        mealDatabase.daoAccess().updateMealPrice(offerPriceOne, Constants.OFFER_ONE);
+                        mealDatabase.daoAccess().updateMealPrice(offerPriceTwo, Constants.OFFER_TWO);
+
+                    }}
             }).start();
-
-
-
     }
+
+    /*private void updateForOffers( ){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Meal offerMealOne = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_ONE);
+                Meal offerMealTwo = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_TWO);
+                double offerPriceOne = offerMealOne.getPrice() * 0.7;
+                double offerPriceTwo = offerMealTwo.getPrice() * 0.7;
+                mealDatabase.daoAccess().updateMealPrice(offerPriceOne, Constants.OFFER_ONE);
+                mealDatabase.daoAccess().updateMealPrice(offerPriceTwo, Constants.OFFER_TWO);
+
+            }
+        }).start();
+    }*/
 
     private void deleteDatabaseEntries(){
         new Thread(new Runnable() {
@@ -199,10 +220,10 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
                 startActivity(intent);
                 break;
             case R.id.main_james_offer_one:
-                startOfferIntent(Constants.MILCHKAFFEE_ID);
+                startOfferIntent(Constants.OFFER_ONE);
                 break;
             case R.id.main_james_offer_two:
-                startOfferIntent(Constants.SWEETBAGEL);
+                startOfferIntent(Constants.OFFER_TWO);
                 break;
         }
 

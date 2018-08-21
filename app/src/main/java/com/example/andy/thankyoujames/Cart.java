@@ -12,19 +12,21 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Cart extends Activity implements View.OnClickListener{
 
     private TextView cartHeader, textTotal, textSumPrice;
-    private Button  btnSendOrder, btnKeepShopping;
+    private Button  btnSendOrder, btnKeepShopping, btnClearCart;
     private ListView itemList;
     private MealListAdapter adapter;
 
-    private double sumPrices = 0;
+    private double sumPrice = 0;
 
     private ArrayList<Integer> shoppingItems;
     private ArrayList<Meal> shoppedMeals = new ArrayList<>();
+    private ArrayList<Double> shoppingPrices = new ArrayList<>();
 
 
 
@@ -37,7 +39,7 @@ public class Cart extends Activity implements View.OnClickListener{
         initViews();
         getShoppingItems();
         setUpListView();
-        //setTexts();
+
     }
 
     private void initViews(){
@@ -50,12 +52,13 @@ public class Cart extends Activity implements View.OnClickListener{
         //Buttons
         btnSendOrder = findViewById(R.id.btnSendOrder);
         btnKeepShopping = findViewById(R.id.btnContinueShopping);
+        btnClearCart = findViewById(R.id.btnClearCart);
+        btnClearCart.setOnClickListener(this);
         btnKeepShopping.setOnClickListener(this);
         btnSendOrder.setOnClickListener(this);
 
 
     }
-
 
     private void getShoppingItems(){
         shoppingItems = ItemClass.shoppingCart.getShoppingItems();
@@ -70,19 +73,14 @@ public class Cart extends Activity implements View.OnClickListener{
 
                     Meal newShoppedMeal;
                     newShoppedMeal = MainJames.mealDatabase.daoAccess().fetchOneMealbyMealID(shoppingItems.get(i));
-                    sumPrices += newShoppedMeal.getPrice();
-                    System.out.println(sumPrices);
-                    //getSumPrice(newShoppedMeal.getPrice());
                     shoppedMeals.add(newShoppedMeal);
                     }
+                    setTexts();
                 }
             }).start();
 
     }
 
-   // private void getSumPrice(double newPrice){
-     //   sumPrices += newPrice;
-    //}
 
     private void setUpListView(){
 
@@ -102,25 +100,44 @@ public class Cart extends Activity implements View.OnClickListener{
 
     }
 
-    /*public void setTexts(){
-        String result = ""+ sumPrices;
+    private void getTotalPrice(){
 
-        textSumPrice.setText(result);
-    }*/
+        for (int i = 0; i < shoppedMeals.size(); i++){
+
+            sumPrice += shoppedMeals.get(i).getPrice();
+        }
+
+    }
+
+    private void updatePrice(int position){
+
+        double minusPrice = shoppedMeals.get(position).getPrice();
+        sumPrice = sumPrice - minusPrice;
+        textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+"€");
+
+    }
+
+
+
+    private void setTexts(){
+        getTotalPrice();
+        textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+ "€" );
+    }
 
     private void clearShoppingCart(){
 
-        ItemClass.shoppingCart.clearShoppingCart();
+        sumPrice = 0;
         shoppingItems.clear();
         shoppedMeals.clear();
         adapter.notifyDataSetChanged();
+        textSumPrice.setText( 0 + "€");
     }
 
     private void itemLongClicked(int position){
 
+        updatePrice(position);
         shoppingItems.remove(position);
         shoppedMeals.remove(position);
-        ItemClass.shoppingCart.removeSingleItem(position);
         adapter.notifyDataSetChanged();
 
     }

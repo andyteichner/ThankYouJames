@@ -3,8 +3,8 @@ package com.example.andy.thankyoujames;
 public abstract class Constants {
 
     //Offers
-    public static final int OFFER_ONE = 111;
-    public static final int OFFER_TWO = 131;
+    public static final int OFFER_ONE = 112;
+    public static final int OFFER_TWO = 132;
 
     public static final double DISCOUNT = 0.7;
 
