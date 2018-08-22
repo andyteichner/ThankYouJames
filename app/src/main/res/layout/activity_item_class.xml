@@ -1,105 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ItemClass">
 
-    <Button
-        android:id="@+id/header_burger_button_itemcl"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:text="B"
-        />
-
-    <Button
-        android:id="@+id/header_shopping_button_itemcl"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:text="WK"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/meal_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        app:srcCompat="@drawable/test_image"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="45dp" />
+        <Button
+            android:id="@+id/header_burger_button_itemcl"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/burgericon2"
+            />
 
-    <TextView
-        android:id="@+id/name_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="249dp"
-        android:text="Essen"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/price_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="185dp"
-        android:text="Preis"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/description_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="247dp"
-        android:text="TextView"
-        android:textColor="#000"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="105dp"
-        android:text="1"
-        android:textSize="40sp" />
-
-    <Button
-        android:id="@+id/counter_plus"
-        android:layout_width="52dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/counter"
-        android:layout_toEndOf="@+id/name_tag"
-        android:text="+" />
-
-    <Button
-        android:id="@+id/counter_minus"
-        android:layout_width="52dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/counter"
-        android:layout_toStartOf="@+id/name_tag"
-        android:text="-" />
+        <Button
+            android:id="@+id/header_shopping_button_itemcl"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/carticon2"
+            />
 
 
-    <Button
-        android:id="@+id/shopping_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="42dp"
-        android:text="zum Warenkorb hinzufügen" />
+        <ImageView
+            android:id="@+id/meal_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            app:srcCompat="@drawable/test_image"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="45dp" />
+
+        <TextView
+            android:id="@+id/name_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/meal_image"
+            android:text="Essen"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/price_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/description_tag"
+            android:text="Preis"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/description_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/name_tag"
+            android:text="TextView"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/price_tag"
+            android:text="1"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/counter_plus"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/counter"
+            android:layout_toEndOf="@+id/name_tag"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/counter_minus"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/counter"
+            android:layout_toStartOf="@+id/name_tag"
+            android:text="-" />
 
 
+        <Button
+            android:id="@+id/shopping_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/counter"
+            android:layout_marginTop="30dp"
+            android:text="zum Warenkorb hinzufügen" />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

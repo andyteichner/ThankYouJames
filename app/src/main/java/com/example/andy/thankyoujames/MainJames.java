@@ -9,11 +9,14 @@ import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.app.ActionBar;
 
 public class MainJames extends FragmentActivity implements View.OnClickListener {
 
@@ -42,6 +45,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         deleteDatabaseEntries();
         fillDatabase();
         //updateForOffers();
+
 
     }
 
@@ -189,6 +193,8 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         offerTwo.setOnClickListener(this);
 
     }
+
+
 
     private void startOfferIntent(int offerID){
         Intent intent = new Intent(MainJames.this, ItemClass.class);

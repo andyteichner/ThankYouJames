@@ -1,109 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".OrderSubmitted">
 
-    <TextView
-        android:id="@+id/headerOrderSubmitted"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="119dp"
-        android:gravity="center"
-        android:text="@string/thankyou"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:id="@+id/linlayOrderSubmitted"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:layout_marginBottom="250dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/pleasePickUp"
+            android:id="@+id/headerOrderSubmitted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="@string/txtPleasePickUp"
-            android:textSize="18sp"/>
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="119dp"
+            android:gravity="center"
+            android:text="@string/thankyou"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/linlayOrderSubmitted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation= "horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center">
+            android:layout_below="@id/headerOrderSubmitted"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="250dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/hourText"
-                android:layout_width="wrap_content"
+                android:id="@+id/pleasePickUp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp" />
+                android:textAlignment="center"
+                android:text="@string/txtPleasePickUp"
+                android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/colon"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="1sp"
-                android:layout_marginRight="1sp"
-                android:text=":"
-                android:textSize="25sp" />
+                android:orientation= "horizontal"
+                android:layout_below="@id/pleasePickUp"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/minuteText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/hourText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/colon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1sp"
+                    android:layout_marginRight="1sp"
+                    android:text=":"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/minuteText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="25sp" />
 
 
-            <TextView
-                android:id="@+id/uhr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Uhr"
-                android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/uhr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Uhr"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <!--Hier noch Adresse des Restaurants hin, als TextView oder Bild?
+            Idealerweise mit Verlinkung zu GoogleMaps,wenn man draufklickt-->
+
+
         </LinearLayout>
 
-        <!--Hier noch Adresse des Restaurants hin, als TextView oder Bild?
-        Idealerweise mit Verlinkung zu GoogleMaps,wenn man draufklickt-->
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linlayGPS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="107dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/googleMapsImgBtn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linlayGPS"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/googlemapsicon" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="Hier können Sie uns finden" />
+            <ImageButton
+                android:id="@+id/googleMapsImgBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/googlemapsicon" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Hier können Sie uns finden" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</ScrollView>

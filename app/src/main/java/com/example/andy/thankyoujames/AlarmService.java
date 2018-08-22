@@ -80,7 +80,6 @@ public class AlarmService extends Service {
         startForeground(1, notification);
 
 
-
         return START_NOT_STICKY;
     }
 

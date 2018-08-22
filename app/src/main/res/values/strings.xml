@@ -33,7 +33,7 @@
     // Kategorien für die einzelen Tageszeiten
     <string name="supermeal_morning_1">Kaffee</string>
     <string name="supermeal_morning_2">Müsli</string>
-    <string name="supermeal_morning_3">Beagles</string>
+    <string name="supermeal_morning_3">Bagles</string>
 
     <string name="supermeal_noon_1">Suppe</string>
     <string name="supermeal_noon_2">Pasta</string>
@@ -58,7 +58,7 @@
 
     // Gerichte wenn "noon" ausgeählt wird
     <string name="soup_1">Tomatensuppe</string>
-    <string name="soup_2">Spragelsuppe</string>
+    <string name="soup_2">Spargelsuppe</string>
     <string name="soup_3">Festtagssuppe</string>
 
     <string name="pasta_1">Carbonara</string>
@@ -71,7 +71,7 @@
 
     //Gerichte wenn "evening" gewählt wird
     <string name="pizza_1">Hawaii</string>
-    <string name="pizza_2">Magarita</string>
+    <string name="pizza_2">Margarita</string>
     <string name="pizza_3">Spezial</string>
 
     <string name="meat_1">Burger</string>

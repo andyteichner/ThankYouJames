@@ -3,19 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light"
+    android:background="@color/fragmentBackground"
     tools:context=".BurgerMenu">
 
 
 
     <Button
         android:id="@+id/morning_button"
+        android:drawableLeft="@drawable/breakfasticon"
+        android:backgroundTint="@color/btnBreakfast"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:text="@string/fragment_morning" />
 
     <Button
         android:id="@+id/noon_button"
+        android:drawableLeft="@drawable/lunchicon"
+        android:backgroundTint="@color/btnLunch"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/morning_button"
@@ -23,6 +29,8 @@
 
     <Button
         android:id="@+id/evening_button"
+        android:drawableLeft="@drawable/dinnericon"
+        android:backgroundTint="@color/btnDinner"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/noon_button"

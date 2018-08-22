@@ -26,6 +26,7 @@ public class TimerActivity extends AppCompatActivity {
     private int hour;
     private int minute;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +76,7 @@ public class TimerActivity extends AppCompatActivity {
                 else
                     time = time + (1000 * 60 * 60 * 24);
             }
+
             alarm_manager.set(AlarmManager.RTC_WAKEUP,time,pendingIntent);
 
 
@@ -108,6 +110,7 @@ public class TimerActivity extends AppCompatActivity {
                 if(hour < 10){
                     hourText = "0" + String.valueOf(hour);
                 }
+
 
                 Intent setTime = new Intent(TimerActivity.this,OrderSubmitted.class);
                 setTime.putExtra("Hour",hourText);

@@ -22,7 +22,8 @@
         <activity android:name=".Menu_2" />
         <activity android:name=".ItemClass" />
         <activity android:name=".Cart" />
-        <activity android:name=".TimerActivity" />
+        <activity android:name=".TimerActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".OrderSubmitted"></activity>
 
         <service

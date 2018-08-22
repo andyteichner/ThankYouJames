@@ -41,6 +41,7 @@ public class Menu_2 extends Activity implements View.OnClickListener{
         meal_no_1.setOnClickListener(this);
         meal_no_2.setOnClickListener(this);
         meal_no_3.setOnClickListener(this);
+        headerShopping.setOnClickListener(this);
 
     }
 
@@ -124,9 +125,9 @@ public class Menu_2 extends Activity implements View.OnClickListener{
     public void onClick(View view) {
         // TODO: 30.07.2018 send intents machen, Auf die einzelnen Seiten der Gerichte kommen -> Vermutlich mit Datenbank
         switch (view.getId()){
-            case R.id.header_burger_button:
+            case R.id.header_burger_button_menu2:
                 break;
-            case R.id.header_shopping_button:
+            case R.id.header_shopping_button_menu2:
                 Intent goToCart = new Intent(this,Cart.class);
                 startActivity(goToCart);
                 break;

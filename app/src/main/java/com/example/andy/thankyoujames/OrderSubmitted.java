@@ -37,5 +37,10 @@ public class OrderSubmitted extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed(){
+
+    }
+
 
 }
