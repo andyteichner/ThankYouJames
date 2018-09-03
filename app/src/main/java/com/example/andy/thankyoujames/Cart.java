@@ -28,13 +28,9 @@ public class Cart extends Activity implements View.OnClickListener{
     private double sumPrice = 0;
 
     private ArrayList<Integer> shoppingItems;
-    private ArrayList<Integer> numberOfAppearences = new ArrayList<>();
-    private ArrayList<Integer> soloAppearanceItem = new ArrayList<>();
+    public static ArrayList<Integer> numberOfAppearences = new ArrayList<>();
+    public static ArrayList<Integer> soloAppearanceItem = new ArrayList<>();
     private ArrayList<Meal> shoppedMeals = new ArrayList<>();
-
-
-
-
 
 
     @Override
@@ -95,7 +91,7 @@ public class Cart extends Activity implements View.OnClickListener{
         adapter = new MealListAdapter(getApplicationContext(), shoppedMeals);
         itemList.setAdapter(adapter);
 
-        itemList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        itemList.setOnItemLongClickListener(   new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
                 itemLongClicked(position);
@@ -165,15 +161,6 @@ public class Cart extends Activity implements View.OnClickListener{
                 soloAppearanceItem.add(shoppingItems.get(i));
             }
         }
-    }
-
-
-    public ArrayList<Integer> getSoloShoppedItemIds(){
-        return soloAppearanceItem;
-    }
-
-    public ArrayList<Integer> getNumberOfAppearences(){
-        return numberOfAppearences;
     }
 
 
