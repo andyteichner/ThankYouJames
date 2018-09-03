@@ -25,9 +25,9 @@ public abstract class Constants {
     public static final int FRESHBAGEL = 132;
     public static final int DEFAULTBAGEL = 133;
 
-    public static final int TOAMTENSUPPE = 211;
+    public static final int TOMATENSUPPE = 211;
     public static final int SPARGELSUPPE = 212;
-    public static final int FESTTAGSSUPEE =213;
+    public static final int FESTTAGSSUPPE =213;
 
     public static final int PASTA_CARBONARA =221;
     public static final int PASTA_NAPOLI = 222;
@@ -38,16 +38,16 @@ public abstract class Constants {
     public static final int SANDWICH_CHICKEN = 233;
 
     public static final int PIZZA_HAWAII = 311;
-    public static final int PIZZA_MAGARITHA = 312;
+    public static final int PIZZA_MARGARITHA = 312;
     public static final int PIZZA_SPEZIAL = 313;
 
     public static final int MEAT_BURGER = 321;
     public static final int MEAT_STEAK = 322;
-    public static final int MEAT_SCHNITZL = 323;
+    public static final int MEAT_SCHNITZEL = 323;
 
     public static final int FISH_CHIPS = 331;
     public static final int FISH_LACHS = 332;
-    public static final int FISH_KALAMIR = 333;
+    public static final int FISH_KALAMARI = 333;
 
 
 
@@ -67,7 +67,7 @@ public abstract class Constants {
     public static final double  defaultbagel_price = 2.00;
 
     //Preise Suppen
-    public static final double  toamtensuppe_price =3.50;
+    public static final double  tomatensuppe_price =3.50;
     public static final double  spargelsuppe_price = 3.50;
     public static final double  festtagssuppe_price =4.00;
 
@@ -80,6 +80,21 @@ public abstract class Constants {
     public static final double sandwich_chicken_price = 4.50;
     public static final double sandwich_tomate_price =4.50;
     public static final double sandwich_ham_price = 4.50;
+
+    //Preise Pizza
+    public static final double pizza_hawaii_price = 7.00;
+    public static final double pizza_margaritha_price = 6.00;
+    public static final double pizza_spezial_price = 7.50;
+
+    //Preise Meat
+    public static final double meat_burger_price = 6.50;
+    public static final double meat_steak_price = 9.50;
+    public static final double meat_schnitzel_price = 6.00;
+
+    //Preise Fish
+    public static final double fish_chips_price = 5.50;
+    public static final double fish_lachs_price = 8.50;
+    public static final double fish_kalamari_price = 8.50;
 
 
 

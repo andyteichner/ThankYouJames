@@ -60,50 +60,112 @@ public class Menu_2 extends Activity implements View.OnClickListener{
 
                 switch (id){
                     case 11:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.coffeeimage));
                         meal_no_1.setText(R.string.coffee_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.milkcoffeeicon),null, null, null);
                         meal_no_2.setText(R.string.coffee_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.cappuccinoicon),null, null, null);
                         meal_no_3.setText(R.string.coffee_3);
-                        headerImage.setImageResource(R.drawable.coffee);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.espressoicon),null, null, null);
                         break;
                     case 12:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.muesliimage));
                         meal_no_1.setText(R.string.muesli_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.chocolatemuesliicon),null, null, null);
                         meal_no_2.setText(R.string.muesli_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.fruitmuesliicon),null, null, null);
                         meal_no_3.setText(R.string.muesli_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.nutmuesliicon),null, null, null);
                         break;
                     case 13:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.bagelimage));
                         meal_no_1.setText(R.string.bagel_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.sweetbagelicon),null, null, null);
                         meal_no_2.setText(R.string.bagel_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.freshbagelicon),null, null, null);
                         meal_no_3.setText(R.string.bagel_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.salmonicon),null, null, null);
                         break;
                     case 21:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.soupimage));
                         meal_no_1.setText(R.string.soup_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.tomatosoupicon),null, null, null);
                         meal_no_2.setText(R.string.soup_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.asparagussoupicon),null, null, null);
                         meal_no_3.setText(R.string.soup_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.festtagssoupicon),null, null, null);
                         break;
                     case 22:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.pastaimage));
                         meal_no_1.setText(R.string.pasta_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.carbonaraicon),null, null, null);
                         meal_no_2.setText(R.string.pasta_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.napoliicon),null, null, null);
                         meal_no_3.setText(R.string.pasta_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.tunaicon),null, null, null);
                         break;
                     case 23:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.sandwichimage));
                         meal_no_1.setText(R.string.sandwich_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.hamicon),null, null, null);
                         meal_no_2.setText(R.string.sandwich_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.salamiicon),null, null, null);
                         meal_no_3.setText(R.string.sandwich_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.chickenicon),null, null, null);
                         break;
                     case 31:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.pizzaimage));
                         meal_no_1.setText(R.string.pizza_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.hawaiiicon),null, null, null);
                         meal_no_2.setText(R.string.pizza_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.margaritaicon),null, null, null);
                         meal_no_3.setText(R.string.pizza_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.spezialicon),null, null, null);
                         break;
                     case 32:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.meatimage));
                         meal_no_1.setText(R.string.meat_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.burgermeaticon),null, null, null);
                         meal_no_2.setText(R.string.meat_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.steakicon),null, null, null);
                         meal_no_3.setText(R.string.meat_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.schnitzelicon),null, null, null);
                         break;
                     case 33:
+                        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.fishimage));
                         meal_no_1.setText(R.string.fish_1);
+                        meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.fishandchipsicon),null, null, null);
                         meal_no_2.setText(R.string.fish_2);
+                        meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.salmonicon),null, null, null);
                         meal_no_3.setText(R.string.fish_3);
+                        meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                                getResources().getDrawable(R.drawable.calamariicon),null, null, null);
                         break;
                 }
         }

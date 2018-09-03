@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         ></ImageView>
 
     <Button
@@ -40,8 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/submeal_no1_menu2"
-            android:drawableLeft="@drawable/breakfasticon"
             android:layout_below="@id/header_image"
+            android:textSize="15sp"
 
             />
 
@@ -49,16 +49,16 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/submeal_no2_menu2"
-            android:drawableLeft="@drawable/breakfasticon"
             android:layout_below="@id/submeal_no1_menu2"
+            android:textSize="15sp"
             />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/submeal_no3_menu2"
-            android:drawableLeft="@drawable/breakfasticon"
             android:layout_below="@id/submeal_no2_menu2"
+            android:textSize="15sp"
             />
 
 

@@ -18,7 +18,7 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:src="@drawable/headerimage"></ImageView>
+            android:src="@drawable/mainjamesheader"></ImageView>
 
 
         <ImageButton
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_centerHorizontal="true"
                 android:text="@string/main_offer_text"
                 android:textSize="25sp" />
@@ -62,7 +62,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="86dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -70,14 +69,50 @@
                     android:id="@+id/main_james_offer_one"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_marginRight="10dp" />
+                    android:background="@drawable/cappuccinooffer"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="10dp"
+                    />
 
 
                 <ImageButton
                     android:id="@+id/main_james_offer_two"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
+                    android:background="@drawable/freshbageloffer"
+                    android:scaleType="centerCrop"
                     android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linlayOfferTexts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_james_offerText_one"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/cappuccinoOffer"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkgreen"/>
+
+
+                <TextView
+                    android:id="@+id/main_james_offerText_two"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/bagelOffer"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkgreen"/>
 
             </LinearLayout>
         </LinearLayout>

@@ -9,13 +9,12 @@
     <TextView
         android:id="@+id/tvTimer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
+        android:layout_above="@id/simpleTimePicker"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/textTimerHeader"
-        android:layout_above="@id/simpleTimePicker"
         android:textAlignment="center"
         android:textSize="20sp" />
 
@@ -60,7 +59,6 @@
         android:id="@+id/simpleTimePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:timePickerMode="clock" />
 

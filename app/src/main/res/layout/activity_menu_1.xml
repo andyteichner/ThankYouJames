@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         ></ImageView>
 
 
@@ -42,24 +42,25 @@
         <Button
             android:id="@+id/supermeal_no1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_below="@id/header_image"
-            android:drawableLeft="@drawable/breakfasticon" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/supermeal_no2"
-            android:drawableStart="@drawable/breakfasticon"
-            android:layout_below="@id/supermeal_no1"
+            android:textSize="15sp"
             />
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/supermeal_no2"
+            android:layout_below="@id/supermeal_no1"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:id="@+id/supermeal_no3"
-            android:drawableLeft="@drawable/breakfasticon"
             android:layout_below="@id/supermeal_no2"
+            android:textSize="15sp"
              />
 
 

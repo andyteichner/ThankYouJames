@@ -27,12 +27,14 @@ public class TimerActivity extends AppCompatActivity {
     private int minute;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
         initView();
         setTime();
+
 
     }
 
@@ -90,6 +92,8 @@ public class TimerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Quelle: https://www.tutlane.com/tutorial/android/android-timepicker-with-examples
 
+
+
                 if (Build.VERSION.SDK_INT >= 23 ){
                     hour = timer.getHour();
                     minute = timer.getMinute();
@@ -111,13 +115,16 @@ public class TimerActivity extends AppCompatActivity {
                     hourText = "0" + String.valueOf(hour);
                 }
 
+                if((hour < 7) || (hour >=22)){
+                    Toast.makeText(TimerActivity.this, "Außerhalb der Öffnungszeiten! Diese sind: 7 - 22 Uhr", Toast.LENGTH_LONG).show();
+                }else{
+                    Intent setTime = new Intent(TimerActivity.this,OrderSubmitted.class);
+                    setTime.putExtra("Hour",hourText);
+                    setTime.putExtra("Minute",minuteText);
 
-                Intent setTime = new Intent(TimerActivity.this,OrderSubmitted.class);
-                setTime.putExtra("Hour",hourText);
-                setTime.putExtra("Minute",minuteText);
 
                 setAlarm();
-                startActivity(setTime);
+                startActivity(setTime);}
             }
         });
     }

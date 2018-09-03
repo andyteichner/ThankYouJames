@@ -12,7 +12,7 @@
         android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:text="Test"
-        android:textSize="30dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/adapter_desc"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/adapter_name"
         android:text="Test"
-        android:textSize="20dp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/adapter_price"
@@ -30,7 +30,7 @@
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
         android:text="Test"
-        android:textSize="30dp"
+        android:textSize="17sp"
         android:textStyle="bold"/>
 
 </RelativeLayout>

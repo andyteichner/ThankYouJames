@@ -21,7 +21,8 @@
         <activity android:name=".Menu_1" />
         <activity android:name=".Menu_2" />
         <activity android:name=".ItemClass" />
-        <activity android:name=".Cart" />
+        <activity android:name=".Cart"
+            android:screenOrientation="portrait"/>
         <activity android:name=".TimerActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".OrderSubmitted"></activity>
@@ -30,7 +31,6 @@
             android:name=".AlarmService"
             android:enabled="true" />
 
-        <activity android:name=".MapsActivity"></activity>
     </application>
 
 </manifest>

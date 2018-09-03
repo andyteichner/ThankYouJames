@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-
         android:text="@string/cart"
-        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
 
@@ -31,27 +31,35 @@
         <ListView
             android:id="@+id/itemView"
             android:layout_width="match_parent"
-            android:layout_height="451dp"></ListView>
+            android:layout_height="400dp"
+            android:layout_above="@id/linlayTotalPrice"
+            android:layout_marginTop="15dp"></ListView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/btnClearCart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.75"
-                android:text="Warenkorb Leeren" />
+    <LinearLayout
+        android:id="@+id/linlayTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linlayTotal"
+        android:layout_above="@id/linlayBottom">
 
-            <TextView
+        <Button
+            android:id="@+id/btnClearCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:text="@string/emptyCart"
+            android:backgroundTint="@color/red"/>
+
+        <TextView
             android:id="@+id/textTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
             android:gravity="center_vertical|end"
             android:text="@string/totalPrice"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -60,10 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
             android:gravity="center"
-            android:text="test"
+            android:text=""
+            android:textSize="20sp"
             android:textStyle="bold" />
-       </LinearLayout>
-
 
     </LinearLayout>
 
@@ -84,7 +91,8 @@
             android:layout_weight="0.5"
             android:text="@string/continueShop"
             android:textAllCaps="true"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:backgroundTint="@color/lightblue"/>
 
         <Button
             android:id="@+id/btnSendOrder"
@@ -93,7 +101,8 @@
             android:layout_weight="0.5"
             android:text="@string/sendOrder"
             android:textAllCaps="true"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:backgroundTint="@color/lightgreen"/>
     </LinearLayout>
 
 </RelativeLayout>
