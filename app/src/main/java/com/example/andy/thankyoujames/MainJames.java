@@ -9,13 +9,17 @@ import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainJames extends FragmentActivity implements View.OnClickListener {
+public class MainJames extends FragmentActivity implements View.OnClickListener, GestureDetector.OnGestureListener{
 
     private final String DATABASE_NAME = "mealDB";
 
@@ -25,6 +29,8 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
     private BurgerMenu  burgerMenu;
     private FragmentTransaction burgerTransaction;
+
+    private GestureDetector mDetector;
 
     public static MealDatabase mealDatabase;
 
@@ -41,13 +47,16 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         createNotificationChannel();
         deleteDatabaseEntries();
         fillDatabase();
-        //updateForOffers();
+        mDetector = new GestureDetector(this, this);
+
 
     }
 
     private void initDB(){
         mealDatabase = Room.databaseBuilder(getApplicationContext(), MealDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
     }
+
+
 
 
     private Meal createNewMeal(int id, int nameID, int descriptionID, int drawableID, double priceID){
@@ -137,20 +146,6 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
             }).start();
     }
 
-    /*private void updateForOffers( ){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Meal offerMealOne = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_ONE);
-                Meal offerMealTwo = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_TWO);
-                double offerPriceOne = offerMealOne.getPrice() * 0.7;
-                double offerPriceTwo = offerMealTwo.getPrice() * 0.7;
-                mealDatabase.daoAccess().updateMealPrice(offerPriceOne, Constants.OFFER_ONE);
-                mealDatabase.daoAccess().updateMealPrice(offerPriceTwo, Constants.OFFER_TWO);
-
-            }
-        }).start();
-    }*/
 
     private void deleteDatabaseEntries(){
         new Thread(new Runnable() {
@@ -198,6 +193,44 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     }
 
     @Override
+    public boolean onDown(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        Toast.makeText(this, "swipe erkannt", Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        mDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    @Override
     public void onClick(View view) {
         // TODO: 29.07.2018  intents für die Angebote sowie das Fragment und den Warenkorb
         switch (view.getId()){
@@ -216,8 +249,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
                 break;
             case R.id.header_shopping_button:
-                Intent intent = new Intent(MainJames.this, Cart.class);
-                startActivity(intent);
+
                 break;
             case R.id.main_james_offer_one:
                 startOfferIntent(Constants.OFFER_ONE);

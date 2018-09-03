@@ -18,15 +18,7 @@ public class ShoppingCart {
         return shoppingItems;
     }
 
-    public void clearShoppingCart(){
-        for (int i = shoppingItems.size(); i <=0; i --){
-            shoppingItems.remove(i);
-        }
-    }
 
-    public void removeSingleItem(int position){
-        shoppingItems.remove(position);
-    }
 
 
 }

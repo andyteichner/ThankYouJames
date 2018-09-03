@@ -3,6 +3,7 @@ package com.example.andy.thankyoujames;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -14,6 +15,8 @@ import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Cart extends Activity implements View.OnClickListener{
 
@@ -25,8 +28,10 @@ public class Cart extends Activity implements View.OnClickListener{
     private double sumPrice = 0;
 
     private ArrayList<Integer> shoppingItems;
+    private ArrayList<Integer> numberOfAppearences = new ArrayList<>();
+    private ArrayList<Integer> soloAppearanceItem = new ArrayList<>();
     private ArrayList<Meal> shoppedMeals = new ArrayList<>();
-    private ArrayList<Double> shoppingPrices = new ArrayList<>();
+
 
 
 
@@ -142,8 +147,26 @@ public class Cart extends Activity implements View.OnClickListener{
 
     }
 
+    private void sortItems(){
+        Collections.sort(shoppingItems);
+        numberOfAppearences.add(Collections.frequency(shoppingItems, shoppingItems.get(0)));
+        soloAppearanceItem.add(shoppingItems.get(0));
+        for( int i = 1; i < shoppingItems.size(); i++){
+            if (shoppingItems.get(i) != shoppingItems.get(i -1)){
+                numberOfAppearences.add(Collections.frequency(shoppingItems, shoppingItems.get(i)));
+                soloAppearanceItem.add(shoppingItems.get(i));
+            }
+        }
+    }
 
 
+    public ArrayList<Integer> getSoloShoppedItemIds(){
+        return soloAppearanceItem;
+    }
+
+    public ArrayList<Integer> getNumberOfAppearences(){
+        return numberOfAppearences;
+    }
 
 
     @Override
@@ -154,6 +177,7 @@ public class Cart extends Activity implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.btnSendOrder:
+                sortItems();
                 Intent getToTimer = new Intent(Cart.this, TimerActivity.class);
                 startActivity(getToTimer);
                 break;
