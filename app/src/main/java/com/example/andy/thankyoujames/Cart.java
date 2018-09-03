@@ -120,6 +120,8 @@ public class Cart extends Activity implements View.OnClickListener{
         sumPrice = sumPrice - minusPrice;
         textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+"€");
 
+
+
     }
 
 
@@ -127,6 +129,12 @@ public class Cart extends Activity implements View.OnClickListener{
     private void setTexts(){
         getTotalPrice();
         textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+ "€" );
+
+//        Intent intent = new Intent (this, OrderSubmitted.class);
+//        String totalSum = Double.toString(sumPrice);
+//        intent.putExtra("TotalSum",totalSum);
+
+
     }
 
     private void clearShoppingCart(){
@@ -179,6 +187,8 @@ public class Cart extends Activity implements View.OnClickListener{
             case R.id.btnSendOrder:
                 sortItems();
                 Intent getToTimer = new Intent(Cart.this, TimerActivity.class);
+                //String totalSum = Double.toString(sumPrice);
+               // getToTimer.putExtra("TotalSum",totalSum);
                 startActivity(getToTimer);
                 break;
             case R.id.btnClearCart:

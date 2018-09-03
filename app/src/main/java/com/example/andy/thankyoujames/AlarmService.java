@@ -64,9 +64,12 @@ public class AlarmService extends Service {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
 
-        Intent gpsIntent = new Intent(this,MapsActivity.class);
-        gpsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent gpsPendingIntent = PendingIntent.getActivity(this,0,gpsIntent,0);
+
+        Uri gmmIntentUri = Uri.parse("geo:48.998589,12.094472?q="+ Uri.encode("Universität Regensburg"));
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        mapIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent gpsPendingIntent = PendingIntent.getActivity(this,0,mapIntent,0);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Essen ist fertig")
@@ -78,7 +81,6 @@ public class AlarmService extends Service {
                 .build();
 
         startForeground(1, notification);
-
 
 
         return START_NOT_STICKY;

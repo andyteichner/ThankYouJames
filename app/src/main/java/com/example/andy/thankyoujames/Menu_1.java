@@ -49,6 +49,7 @@ public class Menu_1 extends Activity implements View.OnClickListener {
         meal_no_1.setOnClickListener(this);
         meal_no_2.setOnClickListener(this);
         meal_no_3.setOnClickListener(this);
+        headerShopping.setOnClickListener(this);
 
     }
 
@@ -59,19 +60,41 @@ public class Menu_1 extends Activity implements View.OnClickListener {
 
         switch (menuIdentifier) {
             case 1:
+                //headerImage noch was raussuchen für case 1 Frühstück, case 2 Mittag, case 3 Abendessen
+                headerImage.setImageDrawable(getResources().getDrawable(R.drawable.morgenimage));
                 meal_no_1.setText(R.string.supermeal_morning_1);
+                meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                         getResources().getDrawable(R.drawable.coffeeicon),null, null, null);
                 meal_no_2.setText(R.string.supermeal_morning_2);
+                meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.muesliicon),null, null, null);
                 meal_no_3.setText(R.string.supermeal_morning_3);
+                meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.bagelicon),null, null, null);
                 break;
             case 2:
+                headerImage.setImageDrawable(getResources().getDrawable(R.drawable.mittagimage));
                 meal_no_1.setText(R.string.supermeal_noon_1);
+                meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.soupicon),null, null, null);
                 meal_no_2.setText(R.string.supermeal_noon_2);
+                meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.pastaicon),null, null, null);
                 meal_no_3.setText(R.string.supermeal_noon_3);
+                meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.sandwichicon),null, null, null);
                 break;
             case 3:
+                headerImage.setImageDrawable(getResources().getDrawable(R.drawable.abendimage));
                 meal_no_1.setText(R.string.supermeal_evening_1);
+                meal_no_1.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.pizzaicon),null, null, null);
                 meal_no_2.setText(R.string.supermeal_evening_2);
+                meal_no_2.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.meaticon),null, null, null);
                 meal_no_3.setText(R.string.supermeal_evening_3);
+                meal_no_3.setCompoundDrawablesWithIntrinsicBounds(
+                        getResources().getDrawable(R.drawable.fishicon),null, null, null);
                 break;
         }
 
@@ -90,9 +113,9 @@ public class Menu_1 extends Activity implements View.OnClickListener {
         public void onClick (View view){
 
             switch (view.getId()) {
-                case R.id.header_burger_button:
+                case R.id.header_burger_button_menu1:
                     break;
-                case R.id.header_shopping_button:
+                case R.id.header_shopping_button_menu1:
                     Intent goToCart = new Intent(this,Cart.class);
                     startActivity(goToCart);
                     break;

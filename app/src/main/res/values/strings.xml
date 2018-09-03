@@ -4,13 +4,15 @@
     // Texte der MainJames Activity
     <string name="main_header_text">James</string>
     <string name="main_offer_text">Highlight der Woche</string>
-    <string name="openingHours"> Öffnungszeiten</string>
+    <string name="cappuccinoOffer">30 % Rabatt auf Cappuccino</string>
+    <string name="bagelOffer">30 % Rabatt auf Cream Cheese Bagel</string>
 
     //Texte Warenkorb
     <string name="cart">Warenkorb</string>
     <string name="totalPrice">Gesamt:</string>
     <string name="continueShop">weiter Shoppen</string>
     <string name="sendOrder">Bestellen</string>
+    <string name="emptyCart">Warenkorb Leeren</string>
 
     //Texte TimerActivity
     <string name="textTimerHeader">Wann möchten Sie Ihre Bestellung abholen?</string>
@@ -29,11 +31,14 @@
     <string name="fragment_morning">Morgen</string>
     <string name="fragment_noon">Mittag</string>
     <string name="fragment_evening">Abend</string>
+    <string name="openingHoursHeader"> Öffnungszeiten</string>
+    <string name="openingHours1">Durchgehend warme Küche</string>
+    <string name="openingHours2">7:00 - 22:00 Uhr</string>
 
     // Kategorien für die einzelen Tageszeiten
     <string name="supermeal_morning_1">Kaffee</string>
     <string name="supermeal_morning_2">Müsli</string>
-    <string name="supermeal_morning_3">Beagles</string>
+    <string name="supermeal_morning_3">Bagles</string>
 
     <string name="supermeal_noon_1">Suppe</string>
     <string name="supermeal_noon_2">Pasta</string>
@@ -48,17 +53,17 @@
     <string name="coffee_2">Cappuccino</string>
     <string name="coffee_3">Espresso</string>
 
-    <string name="muesli_1">Schokomuesli</string>
-    <string name="muesli_2">Fruchtmuesli</string>
-    <string name="muesli_3">Nussmuesli</string>
+    <string name="muesli_1">Schokomüsli</string>
+    <string name="muesli_2">Fruchtmüsli</string>
+    <string name="muesli_3">Nussmüsli</string>
 
     <string name="bagel_1">Sweet Bagel</string>
-    <string name="bagel_2">Fresh Bagel</string>
-    <string name="bagel_3">Default Bagel</string>
+    <string name="bagel_2">Cream Cheese Bagel</string>
+    <string name="bagel_3">Lachs Bagel</string>
 
     // Gerichte wenn "noon" ausgeählt wird
     <string name="soup_1">Tomatensuppe</string>
-    <string name="soup_2">Spragelsuppe</string>
+    <string name="soup_2">Spargelsuppe</string>
     <string name="soup_3">Festtagssuppe</string>
 
     <string name="pasta_1">Carbonara</string>
@@ -67,11 +72,11 @@
 
     <string name="sandwich_1">Schinken und Käse</string>
     <string name="sandwich_2">Salami und Mozzarella</string>
-    <string name="sandwich_3">Huehnchen</string>
+    <string name="sandwich_3">Hühnchen</string>
 
     //Gerichte wenn "evening" gewählt wird
     <string name="pizza_1">Hawaii</string>
-    <string name="pizza_2">Magarita</string>
+    <string name="pizza_2">Margaritha</string>
     <string name="pizza_3">Spezial</string>
 
     <string name="meat_1">Burger</string>
@@ -84,80 +89,117 @@
 
     //Information für die einzelnen Gerichte
     //Morgen
-    //Kaffee:
-    //Details Milchkaffee
-    <string name="milchkaffee_name">Milchkaffee</string>
-    <string name="milchkaffee_des">Kaffee, Milch </string>
+        //Kaffee:
+        //Details Milchkaffee
+        <string name="milchkaffee_name">Milchkaffee</string>
+        <string name="milchkaffee_des">Kaffee, Milch </string>
 
-    //Details Cappuccino
-    <string name="cappu_name">Cappuccino</string>
-    <string name="cappu_des">Kaffee, Milch </string>
+        //Details Cappuccino
+        <string name="cappu_name">Cappuccino</string>
+        <string name="cappu_des">Kaffee, Milch </string>
 
-    //Details Espresso
-    <string name="espresso_name">Espresso</string>
-    <string name="espresso_des">Kaffee</string>
+        //Details Espresso
+        <string name="espresso_name">Espresso</string>
+        <string name="espresso_des">Kaffee</string>
 
-    //Muesli
-    //Details Schokomueslie
-    <string name="schokomu_name">Schokomuesli</string>
-    <string name="schokomu_des">Müsli mit Schokostückchen</string>
+        //Muesli
+        //Details Schokomuesli
+        <string name="schokomu_name">Schokomüsli</string>
+        <string name="schokomu_des">Müsli mit Schokostückchen</string>
 
-    //Details Fruchtmueslie
-    <string name="fruchtmu_name">Fuechtemuesli</string>
-    <string name="fruchtmu_des">Müsli mit Fruchtstückchen</string>
+        //Details Fruchtmuesli
+        <string name="fruchtmu_name">Früchtemüsli</string>
+        <string name="fruchtmu_des">Müsli mit Fruchtstückchen</string>
 
-    //Details Nussmueslie
-    <string name="nussmu_name">Nussmuesli</string>
-    <string name="nussmu_des">Müsli mit Nuessen</string>
+        //Details Nussmuesli
+        <string name="nussmu_name">Nussmüsli</string>
+        <string name="nussmu_des">Müsli mit Nüssen</string>
 
-    //Details Sweet Bagel
-    <string name="sweetbagel_name">Sweet Bagel</string>
-    <string name="sweetbagel_des">Bagel mit Schoko-Nuss-Creme</string>
+        //Details Sweet Bagel
+        <string name="sweetbagel_name">Sweet Bagel</string>
+        <string name="sweetbagel_des">Bagel mit Schoko-Nuss-Creme</string>
 
-    //Details Fresh Bagel
-    <string name="freshbagel_name">Fresh Bagel</string>
-    <string name="freshbagel_des">Bagel mit Frischkäse und frischem Gemüse</string>
+        //Details Cream Cheese Bagel
+        <string name="freshbagel_name">Cream Cheese Bagel</string>
+        <string name="freshbagel_des">Bagel mit Frischkäse und frischem Gemüse</string>
 
-    //Details Default Bagel
-    <string name="defaultbagel_name">Bagel</string>
-    <string name="defaultbagel_des">Bagel</string>
+        //Details Lachs Bagel
+        <string name="defaultbagel_name">Lachs Bagel</string>
+        <string name="defaultbagel_des">Räucherlachs, Meerrettich-Frischkäse, Dill, Kapern, Ochsenherz-Tomaten</string>
 
-    //Details TomatenSuppe
-    <string name="tomatensuppe_name">Toamtensuppe</string>
-    <string name="toamtensuppe_des">Suppe aus Tomaten</string>
+    //Mittag:
+        //Details Tomatensuppe
+        <string name="tomatensuppe_name">Tomatensuppe</string>
+        <string name="tomatensuppe_des">Cremige Tomatensuppe mit Creme Fraiche, dazu geröstetes Ciabatta-Brot</string>
 
-    //Details SpargelSuppe
-    <string name="spargelsuppe_name">Spargelsuppe</string>
-    <string name="spargelsuppe_des">Suppe aus Spargel</string>
+        //Details Spargelsuppe
+        <string name="spargelsuppe_name">Spargelsuppe</string>
+        <string name="spargelsuppe_des">Cremige Spargelsuppe aus grünem und weißem Spargel, dazu geröstetes Ciabatta-Brot</string>
 
-    //Details Festtagssuppe
-    <string name="festtagssuppe_name">Festtagssuppe</string>
-    <string name="festtagssuppe_des">Suppe aus Festtagen</string>
+        //Details Festtagssuppe
+        <string name="festtagssuppe_name">Festtagssuppe</string>
+        <string name="festtagssuppe_des">Feine Gemüsesuppe mit Leberknödel, Grießnocken und Pfannkuchen-Streifen, Petersilie</string>
 
-    //Details Pasta Carbonara
-    <string name="pasta_carbonara_name">Pasta mit Carbonara</string>
-    <string name="pasta_carbonara_des">Pasta, Carbonara</string>
+        //Details Pasta Carbonara
+        <string name="pasta_carbonara_name">Pasta mit Carbonara</string>
+        <string name="pasta_carbonara_des">Hausgemachte Pasta mit cremiger Schinken-Sahne Soße mit Rührei</string>
 
-    //Details Pasta Napoli
-    <string name="pasta_napoli_name">Pasta mit Napoli</string>
-    <string name="pasta_napoli_des">Pasta, Napoli</string>
+        //Details Pasta Napoli
+        <string name="pasta_napoli_name">Pasta mit Napoli</string>
+        <string name="pasta_napoli_des">Hausgemachte Pasta mit feiner Tomaten-Basilikumsoße, mit Mozzarella überbacken und Peperoncino-Öl verfeinert</string>
 
-    //Details Pasta Tuna
-    <string name="pasta_tuna_name">Pasta mit Tunfisch</string>
-    <string name="pasta_tuna_des">Pasta, Tunfisch</string>
+        //Details Pasta Tuna
+        <string name="pasta_tuna_name">Pasta mit Thunfisch</string>
+        <string name="pasta_tuna_des">Hausgemachte Pasta mit cremiger Thunfischsoße, Zwiebeln und Kapern</string>
 
-    //Details Sandwich Schinken
-    <string name="sandwich_ham_name">Sandwich mit Schinken und Kaese</string>
-    <string name="sandwich_ham_des">Toast, Schinken, Kaese</string>
+        //Details Sandwich Schinken
+        <string name="sandwich_ham_name">Sandwich Schinken Käse</string>
+        <string name="sandwich_ham_des">Getoastetes Ciabatta-Brot mit Schinken, Käse, Rucola, Tomaten und Basilikum-Pesto</string>
 
-    //Details Sandwich Tomate
-    <string name="sandwich_tomate_name">Sandwich mit Tomaten und Mozzarella</string>
-    <string name="sandwich_tomate_des">Toast, Tomaten, Mozzarella</string>
+        //Details Sandwich Tomate
+        <string name="sandwich_tomate_name">Sandwich Tomaten Mozzarella</string>
+        <string name="sandwich_tomate_des">Getoastetes Ciabatta-Brot mit Tomaten, Mozzarella, Rucola und Basilikum-Pesto</string>
 
-    //Details Sandwich Chicken
-    <string name="sandwich_chicken_name">Sandwich mit Huehnchen</string>
-    <string name="sandwich_chicken_des">Toast, Huehnchen</string>
+        //Details Sandwich Chicken
+        <string name="sandwich_chicken_name">Chicken Sandwich</string>
+        <string name="sandwich_chicken_des">Getoastetes Ciabatta-Brot mit Hühnchen-Filet, Ananas-Curry-Ingwer-Pesto und Thaibasilikum</string>
 
+    //Abend:
+        //Details Pizza Margaritha
+        <string name="pizza_margaritha_name">Pizza Napoli</string>
+        <string name="pizza_margaritha_des">Tomaten, Mozzarella, Basilikum, Tomatensoße, Knoblauch</string>
+
+        //Details Pizza Hawaii
+        <string name="pizza_hawaii_name">Pizza Hawaii</string>
+        <string name="pizza_hawaii_des">Kochschinken, Ananas, Käse, Tomatensoße</string>
+
+        //Details Pizza Spezial
+        <string name="pizza_spezial_name">Pizza Spezial</string>
+        <string name="pizza_spezial_des">Feinster Serranoschinken, Artischoken, Pepperoni, schwarze Oliven, Parmesan, Käse, Tomatensoße</string>
+
+        //Details Meat Burger
+        <string name="meat_burger_name">Traditional Burger</string>
+        <string name="meat_burger_des">Saftiges Rindfleisch zwischen selbstgemachten Burger-Buns,dazu knackiger Salat, Tomaten, Gewürzgurken, Zwiebelrelish</string>
+
+        //Details Meat Steak
+        <string name="meat_steak_name">Ribeye-Steak</string>
+        <string name="meat_steak_des">250g, Entrecote, dazu Pommes Frites</string>
+
+        //Details Meat Schnitzel
+        <string name="meat_schnitzel_name">Schnitzel Wiener Art</string>
+        <string name="meat_schnitzel_des">vom Schwein, mit Kartoffelsalat</string>
+
+        //Details Fish Fish and Chips
+        <string name="fish_chips_name">Fish and Chips</string>
+        <string name="fish_chips_des">Fishfilet (Kabeljau) in feinem Bierteig frittiert, dazu handgeschnitzte Kartoffelspalten und hausgemachter Kräuterdip</string>
+
+        //Details Fish Lachssteak
+        <string name="fish_lachs_name">Lachssteak</string>
+        <string name="fish_lachs_des">Lachssteak aus Eigenzucht,Zitronen-Sojasoße-Marinade, dazu Salzkartoffeln</string>
+
+        //Details Fish Kalamari
+        <string name="fish_kalamari_name">Kalamari</string>
+        <string name="fish_kalamari_des">Frische Kalamari-Ringe in feinem Bierteig frittiert, dazu scharfe Paprika-Aioli und kleiner Salat</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

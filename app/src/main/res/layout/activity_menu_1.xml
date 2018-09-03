@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         ></ImageView>
 
 
@@ -21,7 +21,7 @@
         android:id="@+id/header_burger_button_menu1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:text="B"
+        android:background="@drawable/burgericon2"
         />
 
     <Button
@@ -29,20 +29,22 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:text="WK"
+        android:background="@drawable/carticon2"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_below="@id/header_image_menu1">
 
         <Button
+            android:id="@+id/supermeal_no1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/supermeal_no1"
             android:layout_below="@id/header_image"
+            android:textSize="15sp"
             />
 
         <Button
@@ -50,6 +52,7 @@
             android:layout_height="60dp"
             android:id="@+id/supermeal_no2"
             android:layout_below="@id/supermeal_no1"
+            android:textSize="15sp"
             />
 
         <Button
@@ -57,6 +60,7 @@
             android:layout_height="60dp"
             android:id="@+id/supermeal_no3"
             android:layout_below="@id/supermeal_no2"
+            android:textSize="15sp"
              />
 
 

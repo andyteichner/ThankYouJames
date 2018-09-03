@@ -3,19 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light"
+    android:background="@color/lightblue"
     tools:context=".BurgerMenu">
 
 
 
     <Button
         android:id="@+id/morning_button"
+        android:drawableLeft="@drawable/breakfasticon"
+        android:backgroundTint="@color/yellow"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:text="@string/fragment_morning" />
 
     <Button
         android:id="@+id/noon_button"
+        android:drawableLeft="@drawable/lunchicon"
+        android:backgroundTint="@color/orange"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/morning_button"
@@ -23,10 +29,44 @@
 
     <Button
         android:id="@+id/evening_button"
+        android:drawableLeft="@drawable/dinnericon"
+        android:backgroundTint="@color/lightgreen"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/noon_button"
         android:text="@string/fragment_evening" />
+
+    <TextView
+        android:id="@+id/openingHoursHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/evening_button"
+        android:text="@string/openingHoursHeader"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/openingHoursText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/openingHoursHeader"
+        android:text="@string/openingHours1"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/openingHoursText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/openingHoursText1"
+        android:text="@string/openingHours2"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
+
 
 
 </RelativeLayout>
