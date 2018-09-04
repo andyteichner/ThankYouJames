@@ -13,6 +13,7 @@
     <string name="continueShop">weiter Shoppen</string>
     <string name="sendOrder">Bestellen</string>
     <string name="emptyCart">Warenkorb Leeren</string>
+    <string name="noOrder">Sie haben keine Gerichte zur Bestellung ausgewählt</string>
 
     //Texte TimerActivity
     <string name="textTimerHeader">Wann möchten Sie Ihre Bestellung abholen?</string>
