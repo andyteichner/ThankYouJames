@@ -66,5 +66,15 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/fragment_menu1"
+        android:name="com.example.andy.thankyoujames.BurgerMenu"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+    </FrameLayout>
+
 
 </RelativeLayout>

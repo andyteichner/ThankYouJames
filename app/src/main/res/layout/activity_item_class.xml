@@ -29,7 +29,6 @@
 
 
 
-
         <LinearLayout
             android:id="@+id/linlayItemClass"
             android:layout_width="match_parent"
@@ -94,7 +93,9 @@
                     android:layout_width="52dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="50dp"
-                    android:text="-" />
+                    android:text="-"
+                    android:textStyle="bold"
+                    android:textColor="@color/red"/>
 
                 <TextView
                     android:id="@+id/counter"
@@ -112,7 +113,9 @@
                     android:layout_width="52dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="+" />
+                    android:text="+"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkgreen"/>
 
 
             </LinearLayout>
@@ -124,10 +127,23 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/counter"
                 android:layout_marginTop="30dp"
+                android:backgroundTint="@color/lightgreen"
                 android:text="zum Warenkorb hinzufügen" />
 
         </LinearLayout>
 
+        <FrameLayout
+            android:id="@+id/fragment_itemcl"
+            android:name="com.example.andy.thankyoujames.BurgerMenu"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+        </FrameLayout>
+
+
     </RelativeLayout>
+
 
 </ScrollView>

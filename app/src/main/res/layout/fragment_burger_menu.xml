@@ -11,7 +11,7 @@
     <Button
         android:id="@+id/morning_button"
         android:drawableLeft="@drawable/breakfasticon"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center"
@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/noon_button"
         android:drawableLeft="@drawable/lunchicon"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/violet"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/morning_button"
@@ -30,7 +30,7 @@
     <Button
         android:id="@+id/evening_button"
         android:drawableLeft="@drawable/dinnericon"
-        android:backgroundTint="@color/lightgreen"
+        android:backgroundTint="@color/pink"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/noon_button"
