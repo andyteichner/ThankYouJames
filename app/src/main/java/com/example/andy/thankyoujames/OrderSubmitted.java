@@ -23,17 +23,18 @@ public class OrderSubmitted extends AppCompatActivity {
 
     private void initView() {
         //Textview
-        hourText = findViewById(R.id.hourText);
-        minuteText = findViewById(R.id.minuteText);
-        totalSum=findViewById(R.id.textSumPrice);
+        hourText = (TextView) findViewById(R.id.hourText);
+        minuteText = (TextView) findViewById(R.id.minuteText);
+        //totalSum=findViewById(R.id.textSumPrice);
 
         //ImageButton
         googleMapsImgBtn = findViewById(R.id.googleMapsImgBtn);
 
-
+        //get Time Input from TimerActivity
 
         hourText.setText(getIntent().getExtras().getString("Hour"));
         minuteText.setText(getIntent().getExtras().getString("Minute"));
+
         //total price to be paid
         //totalSum.setText(getIntent().getExtras().getString("totalSum"));
 
