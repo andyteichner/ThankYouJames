@@ -172,11 +172,12 @@ public class Cart extends Activity implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.btnSendOrder:
+                if ( sumPrice == 0){
+                    Toast.makeText(this, R.string.noOrder, Toast.LENGTH_SHORT).show();
+                }else{
                 sortItems();
                 Intent getToTimer = new Intent(Cart.this, TimerActivity.class);
-                //String totalSum = Double.toString(sumPrice);
-               // getToTimer.putExtra("TotalSum",totalSum);
-                startActivity(getToTimer);
+                startActivity(getToTimer);}
                 break;
             case R.id.btnClearCart:
                 clearShoppingCart();

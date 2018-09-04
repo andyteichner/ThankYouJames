@@ -118,6 +118,7 @@ public class TimerActivity extends AppCompatActivity {
                 if((hour < 7) || (hour >=22)){
                     Toast.makeText(TimerActivity.this, "Außerhalb der Öffnungszeiten! Diese sind: 7 - 22 Uhr", Toast.LENGTH_LONG).show();
                 }else{
+
                     Intent setTime = new Intent(TimerActivity.this,OrderSubmitted.class);
                     setTime.putExtra("Hour",hourText);
                     setTime.putExtra("Minute",minuteText);

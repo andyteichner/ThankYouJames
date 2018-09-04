@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class OrderSubmitted extends AppCompatActivity {
 
-    private TextView hourText,minuteText, totalSum;
+    private TextView hourText,minuteText;
     private ImageButton googleMapsImgBtn;
 
     private ListView itemList;
@@ -25,13 +25,22 @@ public class OrderSubmitted extends AppCompatActivity {
     private ArrayList<Integer> soloShoppedItems ;
     private ArrayList <String> nameAndFrequencyItem = new ArrayList<>();
 
+    private String hour, minute;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_submitted);
+        getIntentValues();
         initView();
         initListView();
+
+    }
+
+    private void getIntentValues(){
+        hour = getIntent().getExtras().getString("Hour");
+        minute = getIntent().getExtras().getString("Minute");
 
     }
 
@@ -68,17 +77,15 @@ public class OrderSubmitted extends AppCompatActivity {
         //Textview
         hourText = findViewById(R.id.hourText);
         minuteText = findViewById(R.id.minuteText);
-        totalSum=findViewById(R.id.textSumPrice);
+
 
         //ImageButton
         googleMapsImgBtn = findViewById(R.id.googleMapsImgBtn);
 
 
 
-        hourText.setText(getIntent().getExtras().getString("Hour"));
-        minuteText.setText(getIntent().getExtras().getString("Minute"));
-        //total price to be paid
-        //totalSum.setText(getIntent().getExtras().getString("totalSum"));
+        hourText.setText(hour);
+        minuteText.setText(minute);
 
 
 
