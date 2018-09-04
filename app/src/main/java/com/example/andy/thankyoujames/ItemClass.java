@@ -5,13 +5,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ItemClass extends Activity implements View.OnClickListener{
+public class ItemClass extends FragmentActivity implements View.OnClickListener{
 
     private Button plusButton, minusButton, shoppingCartButton, headerBurger, headerShopping;
     private TextView nameTag, descriptionTag, counterText, priceTag;
@@ -23,6 +25,9 @@ public class ItemClass extends Activity implements View.OnClickListener{
     private boolean isOfferWitchDiscount = false;
     private String selectedMeal;
 
+    private BurgerMenu  burgerMenu;
+    private FragmentTransaction burgerTransaction;
+
     public static ShoppingCart shoppingCart = new ShoppingCart();
 
 
@@ -31,6 +36,7 @@ public class ItemClass extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_class);
         initViews();
+        initFragment();
         getFinalID();
         checkForOffer();
         setTexts();
@@ -125,11 +131,27 @@ public class ItemClass extends Activity implements View.OnClickListener{
         }
     }
 
+    private void initFragment(){
+        burgerMenu = new BurgerMenu();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_itemcl, burgerMenu).commit();
+        getSupportFragmentManager().beginTransaction().hide(burgerMenu).commit();
+    }
+
 
     @Override
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.header_burger_button_itemcl:
+                burgerTransaction = getSupportFragmentManager().beginTransaction();
+                burgerTransaction.setCustomAnimations(android.R.animator.fade_in,
+                        android.R.animator.fade_out);
+                if (burgerMenu.isHidden()) {
+                    burgerTransaction.show(burgerMenu);
+
+                } else {
+                    burgerTransaction.hide(burgerMenu);
+                }
+                burgerTransaction.commit();
                 break;
             case R.id.header_shopping_button_itemcl:
                 Intent goToCart = new Intent(this,Cart.class);

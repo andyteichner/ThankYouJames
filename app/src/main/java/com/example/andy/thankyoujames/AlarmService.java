@@ -35,11 +35,8 @@ public class AlarmService extends Service {
 
         //Ton für Alarm, sollte noch auf Vibration oder ähnliches angepasst werden
         //Quelle: https://www.codingconnect.net/android-application-creates-alarm-clock/
-//        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-//        if (alarmUri == null)
-//        {
-//            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-//        }
+
+//        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 //        Ringtone ringtone = RingtoneManager.getRingtone(this, alarmUri);
 //        ringtone.play();
 
@@ -54,6 +51,8 @@ public class AlarmService extends Service {
             //deprecated in API 26
             v.vibrate(500);
         }
+
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
 
         //Notification "Essen ist fertig!", wenn Zeit für Abholung erreicht ist
@@ -76,6 +75,7 @@ public class AlarmService extends Service {
                 .setContentText("Dein Essen steht zur Abholung bereit!")
                 .setSmallIcon(R.drawable.butlericon)
                 .setAutoCancel(true)
+                .setSound(soundUri)
                 .setContentIntent(pendingIntent)
                 .addAction(R.drawable.butlericon,"Wo muss ich hin?",gpsPendingIntent)
                 .build();
