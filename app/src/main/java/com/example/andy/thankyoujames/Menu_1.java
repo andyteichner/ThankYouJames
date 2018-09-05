@@ -14,6 +14,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+//This class is the first iteration of the selection progress. Depending on the selected fragment button the texts and pictures
+// in this menu will change accordingly. Through out the this selection the progress the positions of the buttons are used to
+// identify what was selected. Using these positions we created the IDs for each meal. "Milchkaffee" has the ID "111" because its
+// the result of clicking the first option everytime.
 public class Menu_1 extends FragmentActivity implements View.OnClickListener {
 
     private TextView headerText;
@@ -61,12 +65,11 @@ public class Menu_1 extends FragmentActivity implements View.OnClickListener {
 
 
 
-    //in dieser Methode sollen die Texte und Bilder angepasst werden, jenachdem welches Menü ausgewählt worden ist 
+    //As already stated in the opening comment, this method sets the Texts and the images according to the selected menu.
     private void setTexts() {
 
         switch (menuIdentifier) {
             case 1:
-                //headerImage noch was raussuchen für case 1 Frühstück, case 2 Mittag, case 3 Abendessen
                 headerImage.setImageDrawable(getResources().getDrawable(R.drawable.morgenimage));
                 meal_no_1.setText(R.string.supermeal_morning_1);
                 meal_no_1.setCompoundDrawablesWithIntrinsicBounds(

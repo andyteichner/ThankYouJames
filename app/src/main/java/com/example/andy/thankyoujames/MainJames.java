@@ -15,9 +15,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+// This is the main activity of our app. Its used to get the user started when ordering food.
+// It gives the user two special offers right at the start, to get him interested and uses a burger menu fragment
+// to ease the navigation through the app when looking for food
 public class MainJames extends FragmentActivity implements View.OnClickListener {
 
-    private final String DATABASE_NAME = "mealDB";
+
 
     private ImageView   headerImage;
     private TextView    headerText, offerText;
@@ -27,6 +31,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     private FragmentTransaction burgerTransaction;
 
     public static MealDatabase mealDatabase;
+    private final String DATABASE_NAME = "mealDB";
 
     public static final String CHANNEL_ID = "foodisready";
 
@@ -39,17 +44,49 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         initFragment();
         initDB();
         createNotificationChannel();
-        deleteDatabaseEntries();
         fillDatabase();
-        //updateForOffers();
 
     }
 
+    private void initView(){
+        // Buttons
+        headerBurger = findViewById(R.id.header_burger_button);
+        headerShopping = findViewById(R.id.header_shopping_button);
+        headerBurger.setOnClickListener(this);
+        headerShopping.setOnClickListener(this);
+
+        // ImageViews
+        headerImage = findViewById(R.id.header_image);
+
+        // TextViews
+        offerText = findViewById(R.id.main_james_offer_text);
+
+        // ImageButtons
+        offerOne = findViewById(R.id.main_james_offer_one);
+        offerTwo = findViewById(R.id.main_james_offer_two);
+        offerOne.setOnClickListener(this);
+        offerTwo.setOnClickListener(this);
+
+    }
+
+
+// Quelle: https://www.youtube.com/watch?v=i22INe14JUc
+    private void initFragment(){
+        //BurgerMenu
+        burgerMenu = new BurgerMenu();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_mainJames, burgerMenu).commit();
+        getSupportFragmentManager().beginTransaction().hide(burgerMenu).commit();
+    }
+
+    // Here the Database, that is used for the storing the information about the meals, gets created. We used a Room Database, according to
+    // the exercises during the semester.
     private void initDB(){
         mealDatabase = Room.databaseBuilder(getApplicationContext(), MealDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
     }
 
 
+    // The Database stores Meal objects, in order to gather all the needed information in a simplified manner. To achieve a clearer structure when
+    // filling the Database, we sourced the creation of the meals out into this one.
     private Meal createNewMeal(int id, int nameID, int descriptionID, int drawableID, double priceID){
 
         Meal meal = new Meal();
@@ -62,21 +99,12 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         return meal;
     }
 
-    //Quelle:https://codinginflow.com/tutorials/android/foreground-service
-    private void createNotificationChannel(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel serviceChannel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "Essen ist fertig",
-                    NotificationManager.IMPORTANCE_DEFAULT
-            );
 
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(serviceChannel);
-        }
 
-    }
-
+    //In this method all the information gets loaded into the database. For all the meals we create a object with the needed information and
+    // and create an entry in out DB. Before that we check, if the database is already loaded. We gather the information from the string xml and the
+    //Constants class. To keep consistency among the app, the 30% offer for the selected meals gets applied at the end of the method and updated
+    // into the DB.
     private void fillDatabase(){
 
         new Thread(new Runnable() {
@@ -150,8 +178,8 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
                     Meal offerMealOne = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_ONE);
                     Meal offerMealTwo = mealDatabase.daoAccess().fetchOneMealbyMealID(Constants.OFFER_TWO);
-                    double offerPriceOne = offerMealOne.getPrice() * 0.7;
-                    double offerPriceTwo = offerMealTwo.getPrice() * 0.7;
+                    double offerPriceOne = offerMealOne.getPrice() * Constants.DISCOUNT;
+                    double offerPriceTwo = offerMealTwo.getPrice() * Constants.DISCOUNT;
                     mealDatabase.daoAccess().updateMealPrice(offerPriceOne, Constants.OFFER_ONE);
                     mealDatabase.daoAccess().updateMealPrice(offerPriceTwo, Constants.OFFER_TWO);
 
@@ -160,41 +188,21 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
     }
 
 
-    private void deleteDatabaseEntries(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mealDatabase.daoAccess().nukeTable();
-            }
-        }).start();
-    }
 
-    private void initFragment(){
 
-        //BurgerMenu
-        burgerMenu = new BurgerMenu();
-       getSupportFragmentManager().beginTransaction().add(R.id.fragment_mainJames, burgerMenu).commit();
-       getSupportFragmentManager().beginTransaction().hide(burgerMenu).commit();
-    }
 
-    private void initView(){
-        // Buttons
-        headerBurger = findViewById(R.id.header_burger_button);
-        headerShopping = findViewById(R.id.header_shopping_button);
-        headerBurger.setOnClickListener(this);
-        headerShopping.setOnClickListener(this);
+    //Quelle:https://codinginflow.com/tutorials/android/foreground-service
+    private void createNotificationChannel(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel serviceChannel = new NotificationChannel(
+                    CHANNEL_ID,
+                    "Essen ist fertig",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
 
-        // ImageViews
-        headerImage = findViewById(R.id.header_image);
-
-        // TextViews
-        offerText = findViewById(R.id.main_james_offer_text);
-
-        // ImageButtons
-        offerOne = findViewById(R.id.main_james_offer_one);
-        offerTwo = findViewById(R.id.main_james_offer_two);
-        offerOne.setOnClickListener(this);
-        offerTwo.setOnClickListener(this);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
 
     }
 
@@ -207,7 +215,7 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
-        // TODO: 29.07.2018  intents für die Angebote sowie das Fragment und den Warenkorb
+        // In this switch case we either hide or show the fragment, depending on the current state.
         switch (view.getId()){
             case R.id.header_burger_button:
 

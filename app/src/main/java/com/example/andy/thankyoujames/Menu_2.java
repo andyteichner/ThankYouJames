@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+//This activity is the second iteration of the selecting process. It works just as the activity "Menu_1". It simply has more content due to the
+// larger amount of possible outcome.
 public class Menu_2 extends FragmentActivity implements View.OnClickListener{
 
     private TextView headerText;
@@ -60,7 +62,7 @@ public class Menu_2 extends FragmentActivity implements View.OnClickListener{
     }
 
 
-    //in dieser Methode sollen die Texte und Bilder angepasst werden, jenachdem welches Menü ausgewählt worden ist
+    //The method uses the integers given by the intent from Menu_1 to build a two digit ID. As before it sets the texts and images accordingly.
     private void setTexts (int menuIdentifier, int foodIdentifier){
 
         id = menuIdentifier*10+foodIdentifier;
@@ -178,6 +180,7 @@ public class Menu_2 extends FragmentActivity implements View.OnClickListener{
                 }
         }
 
+        // This method is used when a selection button is clicked. It creates the final three digit ID, with which all our meals can be distinguished.
         private void finalMenuSelect(int i ){
             int finalFoodID = id*10+i;
             Intent menuSelect = new Intent(Menu_2.this, ItemClass.class);

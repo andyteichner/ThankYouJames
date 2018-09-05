@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+// Quelle: https://www.youtube.com/watch?v=YMJSBHAZsso&t=611s
 public class MealListAdapter extends BaseAdapter {
 
     private Context mContext;

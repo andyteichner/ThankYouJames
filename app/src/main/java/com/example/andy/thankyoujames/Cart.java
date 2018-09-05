@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+//This is the main shopping cart activity. It displays all the products the user selected, as well as the total price and gives the options to
+// delete either parts or the entire content of the cart. Its also gives the options to continue shopping or finalise the order.
 public class Cart extends Activity implements View.OnClickListener{
 
     private TextView cartHeader, textTotal, textSumPrice;
@@ -61,6 +63,7 @@ public class Cart extends Activity implements View.OnClickListener{
 
     }
 
+    // The following two methods are used to get all products selected by the user in order to display them later on.
     private void getShoppingItems(){
         shoppingItems = ItemClass.shoppingCart.getShoppingItems();
         getShoppedMeals();
@@ -83,6 +86,8 @@ public class Cart extends Activity implements View.OnClickListener{
     }
 
 
+    //To give the user a easy overlook on what he selected, the meals get shown in this ListView with the essential information.
+    //To display the them properly, we used a custom adapter for meals.
     private void setUpListView(){
 
         //ListView
@@ -101,6 +106,7 @@ public class Cart extends Activity implements View.OnClickListener{
 
     }
 
+    //The next three methods are used do show the current price.
     private void getTotalPrice(){
 
         for (int i = 0; i < shoppedMeals.size(); i++){
@@ -116,23 +122,15 @@ public class Cart extends Activity implements View.OnClickListener{
         sumPrice = sumPrice - minusPrice;
         textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+"€");
 
-
-
     }
-
-
 
     private void setTexts(){
         getTotalPrice();
         textSumPrice.setText(new DecimalFormat("##.##").format(sumPrice)+ "€" );
 
-//        Intent intent = new Intent (this, OrderSubmitted.class);
-//        String totalSum = Double.toString(sumPrice);
-//        intent.putExtra("TotalSum",totalSum);
-
-
     }
 
+    //Clears the cart in its entirety.
     private void clearShoppingCart(){
 
         sumPrice = 0;
@@ -142,6 +140,7 @@ public class Cart extends Activity implements View.OnClickListener{
         textSumPrice.setText( 0 + "€");
     }
 
+    //Deletes single selected items from the cart.
     private void itemLongClicked(int position){
 
         updatePrice(position);
@@ -151,6 +150,11 @@ public class Cart extends Activity implements View.OnClickListener{
 
     }
 
+    //In order to give the user a final overview of his order on the last activity "OrderSubmitted", we want to show him or her
+    // the items with the ordered amount. To get these information form the cart, we first sort them. After that we go through the
+    // "shoppingItems" and check the amount for each new item. The amount will be saved in the list "numberOfAppearances" and which item it is
+    // in the list "soloAppearanceItem". These will be accessible for the "OrderSubmitted" Activity. There is a bug with the sorting algorithm,
+    // which we explain in our documentary.
     private void sortItems(){
         Collections.sort(shoppingItems);
         numberOfAppearences.add(Collections.frequency(shoppingItems, shoppingItems.get(0)));

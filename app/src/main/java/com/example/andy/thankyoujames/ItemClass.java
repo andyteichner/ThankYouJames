@@ -13,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//The ItemClass activity functions as the final stage of the menu selection. Here the ID, which was created by selection through out the previous
+// menus, gets translated into the final meal with its information and picture. With a connection to the database via DaoAccess the specific
+// content for each meal can be gathered only by the ID itself. With a instance of the "ShoppingCart" the wanted amount of the meal can be added to
+// the cart when clicking "zum Warenkorb hinzufuegen".
 public class ItemClass extends FragmentActivity implements View.OnClickListener{
 
     private Button plusButton, minusButton, shoppingCartButton, headerBurger, headerShopping;
@@ -48,6 +52,7 @@ public class ItemClass extends FragmentActivity implements View.OnClickListener{
 
     }
 
+    // Checks if the selected meal is a offer.
     private void checkForOffer(){
             if(finalFoodID == Constants.OFFER_ONE || finalFoodID == Constants.OFFER_TWO){
                 isOfferWitchDiscount = true;
@@ -58,7 +63,8 @@ public class ItemClass extends FragmentActivity implements View.OnClickListener{
 
 
 
-
+// Here we access the database via the DaoAccess in extra Thread. We can gather the all information from the Database and update the texts and
+// images. If the meal is a offer the price will be shown in green.
     private void setTexts(){
         new Thread(new Runnable() {
             @Override
@@ -116,6 +122,7 @@ public class ItemClass extends FragmentActivity implements View.OnClickListener{
         ImageTag = findViewById(R.id.meal_image);
     }
 
+    //this operates the counter for how manny products you want to buy.
     private void updateCounter(int i ){
         if (i ==1 ){
             counter1++;
@@ -164,6 +171,7 @@ public class ItemClass extends FragmentActivity implements View.OnClickListener{
                 updateCounter(0);
                 break;
             case R.id.shopping_button:
+                // if u click this button, the amount of selected meals will be added to the cart.
                 for (int i = 1; i <= counter1; i++){
                 shoppingCart.addShoppingItem(finalFoodID);}
                 Toast.makeText(this, ""+ counter1 + " "+selectedMeal+" zum Warenkorb hinzugefügt", Toast.LENGTH_SHORT).show();
