@@ -30,7 +30,7 @@ public class Cart extends Activity implements View.OnClickListener{
     private double sumPrice = 0;
 
     private ArrayList<Integer> shoppingItems;
-    public static ArrayList<Integer> numberOfAppearences = new ArrayList<>();
+    public static ArrayList<Integer> numberOfAppearances = new ArrayList<>();
     public static ArrayList<Integer> soloAppearanceItem = new ArrayList<>();
     private ArrayList<Meal> shoppedMeals = new ArrayList<>();
 
@@ -157,11 +157,11 @@ public class Cart extends Activity implements View.OnClickListener{
     // which we explain in our documentary.
     private void sortItems(){
         Collections.sort(shoppingItems);
-        numberOfAppearences.add(Collections.frequency(shoppingItems, shoppingItems.get(0)));
+        numberOfAppearances.add(Collections.frequency(shoppingItems, shoppingItems.get(0)));
         soloAppearanceItem.add(shoppingItems.get(0));
         for( int i = 1; i < shoppingItems.size(); i++){
             if (shoppingItems.get(i) != shoppingItems.get(i -1)){
-                numberOfAppearences.add(Collections.frequency(shoppingItems, shoppingItems.get(i)));
+                numberOfAppearances.add(Collections.frequency(shoppingItems, shoppingItems.get(i)));
                 soloAppearanceItem.add(shoppingItems.get(i));
             }
         }

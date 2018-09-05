@@ -15,6 +15,8 @@ import android.widget.ToggleButton;
 
 import java.util.Calendar;
 
+
+//this activity enables the user to pick a certain time for picking up his/her order at the restaurant
 public class TimerActivity extends AppCompatActivity {
 
     TimePicker timer;
@@ -45,7 +47,7 @@ public class TimerActivity extends AppCompatActivity {
         timer.setIs24HourView(true);
     }
 
-    //Quellen:
+    //Sources:
     //https://www.codingconnect.net/android-application-creates-alarm-clock/
     //https://github.com/annathehybrid/Github/tree/master/WhaleAlarmClock/app/src/main/java/anna/whalealarmclock
     private void setAlarm() {
@@ -67,9 +69,9 @@ public class TimerActivity extends AppCompatActivity {
             calendar.set(Calendar.MINUTE, minute);
 
             Intent alarmIntent = new Intent(TimerActivity.this, AlarmService.class);
-
             pendingIntent = PendingIntent.getService(TimerActivity.this, 0,
                     alarmIntent, 0);
+
 
             time = (calendar.getTimeInMillis() - (calendar.getTimeInMillis() % 60000));
             if (System.currentTimeMillis() > time) {
@@ -90,8 +92,7 @@ public class TimerActivity extends AppCompatActivity {
         finalSendOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Quelle: https://www.tutlane.com/tutorial/android/android-timepicker-with-examples
-
+                //Source: https://www.tutlane.com/tutorial/android/android-timepicker-with-examples
 
 
                 if (Build.VERSION.SDK_INT >= 23 ){
@@ -115,6 +116,7 @@ public class TimerActivity extends AppCompatActivity {
                     hourText = "0" + String.valueOf(hour);
                 }
 
+                //adjusting the possible time input to the opening hours of the restaurant
                 if((hour < 7) || (hour >=22)){
                     Toast.makeText(TimerActivity.this, "Außerhalb der Öffnungszeiten! Diese sind: 7 - 22 Uhr", Toast.LENGTH_LONG).show();
                 }else{
