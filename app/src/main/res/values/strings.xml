@@ -27,8 +27,7 @@
     <string name="foodready">FoodReady</string>
     <string name="description">Das ist eine Beschreibung</string>
 
-
-    //Fragement Texte
+    //Fragment Texte
     <string name="fragment_morning">Morgen</string>
     <string name="fragment_noon">Mittag</string>
     <string name="fragment_evening">Abend</string>
@@ -36,7 +35,7 @@
     <string name="openingHours1">Durchgehend warme Küche</string>
     <string name="openingHours2">7:00 - 22:00 Uhr</string>
 
-    // Kategorien für die einzelen Tageszeiten
+    // Kategorien für die einzelnen Tageszeiten
     <string name="supermeal_morning_1">Kaffee</string>
     <string name="supermeal_morning_2">Müsli</string>
     <string name="supermeal_morning_3">Bagles</string>
@@ -62,7 +61,7 @@
     <string name="bagel_2">Cream Cheese Bagel</string>
     <string name="bagel_3">Lachs Bagel</string>
 
-    // Gerichte wenn "noon" ausgeählt wird
+    // Gerichte wenn "noon" ausgewählt wird
     <string name="soup_1">Tomatensuppe</string>
     <string name="soup_2">Spargelsuppe</string>
     <string name="soup_3">Festtagssuppe</string>

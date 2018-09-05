@@ -62,7 +62,8 @@ public class MainJames extends FragmentActivity implements View.OnClickListener 
         return meal;
     }
 
-    //Quelle:https://codinginflow.com/tutorials/android/foreground-service
+    //Notification Channel
+    //Source:https://codinginflow.com/tutorials/android/foreground-service
     private void createNotificationChannel(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel serviceChannel = new NotificationChannel(

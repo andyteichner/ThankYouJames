@@ -46,7 +46,7 @@ public class OrderSubmitted extends AppCompatActivity {
 
     private void setupContentForListView() {
 
-    shoppedItemAppearances = Cart.numberOfAppearences;
+    shoppedItemAppearances = Cart.numberOfAppearances;
     soloShoppedItems = Cart.soloAppearanceItem;
 
 
@@ -78,22 +78,19 @@ public class OrderSubmitted extends AppCompatActivity {
         hourText = findViewById(R.id.hourText);
         minuteText = findViewById(R.id.minuteText);
 
-
         //ImageButton
         googleMapsImgBtn = findViewById(R.id.googleMapsImgBtn);
-
-
 
         hourText.setText(hour);
         minuteText.setText(minute);
 
 
-
         //GoogleMaps-Icon
+        //redirects from ThankYou James app to Google Maps app
+        //Source: https://developers.google.com/maps/documentation/urls/android-intents
         googleMapsImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Quelle: https://developers.google.com/maps/documentation/urls/android-intents
                 Uri gmmIntentUri = Uri.parse("geo:48.998589,12.094472?q="+ Uri.encode("Universität Regensburg"));
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
@@ -105,6 +102,8 @@ public class OrderSubmitted extends AppCompatActivity {
         });
     }
 
+
+    //implemented to prevent user from getting back to timer activity
     @Override
     public void onBackPressed(){
 
